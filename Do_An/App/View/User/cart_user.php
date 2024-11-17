@@ -4,11 +4,13 @@
 <?php
 // $show_cart = new cartModel_U;
 // $html_cart = $show_cart->show_product($data['cart']);
-
+$html_cart = '';
 ?>
 
 <section id="cart">
-    <h1><?=$titlePage?></h1>
+    <h1>
+        <?= $titlePage; ?>
+    </h1>
     <table>
         <tr>
             <th>Sản phẩm</th>
@@ -19,5 +21,6 @@
             <th>Chọn</th>
         </tr>
 
+        <?= $html_cart; ?>
     </table>
 </section>

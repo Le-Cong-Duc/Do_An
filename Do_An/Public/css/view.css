@@ -622,7 +622,7 @@ footer a:hover {
 
 /*---------------- Admin ------------ */
 
-#main{
+#main {
     height: auto;
     width: 100%;
     margin-top: 100px;
@@ -647,31 +647,37 @@ footer a:hover {
     border-left: 1px solid #ccc;
 }
 
-#main .section_left .navbar,  .section_middle .navbar {
+#main .section_left .navbar,
+.section_middle .navbar {
     padding: 10px 0;
 }
 
-#main .section_left .navbar ul , .section_middle .navbar ul {
+#main .section_left .navbar ul,
+.section_middle .navbar ul {
     width: 100%;
-    list-style-type:  none;
+    list-style-type: none;
 
 }
 
-#main .section_left .navbar ul li, .section_middle .navbar ul li {
+#main .section_left .navbar ul li,
+.section_middle .navbar ul li {
     width: 100%;
     padding: 10px;
     font-size: 15px;
     font-weight: 600;
 }
 
-#main .section_left .navbar ul li:hover, .section_middle .navbar ul li:hover {
+#main .section_left .navbar ul li:hover,
+.section_middle .navbar ul li:hover {
     background-color: #ccc;
 }
 
-#main .section_left .navbar ul li a , .section_middle .navbar ul li a {
+#main .section_left .navbar ul li a,
+.section_middle .navbar ul li a {
     text-decoration: none;
     line-height: 40px;
 }
+
 #main .section_right {
     float: left;
     width: 50%;
@@ -679,8 +685,9 @@ footer a:hover {
     margin-top: 20px;
     border-left: 1px solid #ccc;
 }
-#main .section_right img{
+
+#main .section_right img {
     width: 50%;
     height: 100px;
-    border-radius: 30px ;
+    border-radius: 30px;
 }

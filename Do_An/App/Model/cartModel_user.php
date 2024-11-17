@@ -22,7 +22,7 @@ class cartModel_U
             $html_list_product .=
                 '<tr>
                     <td>
-                        <img src ="Public/img/' . $product['product_img'] . '">
+                        <img src ="' . $product['product_img'] . '">
                     </td>
                     <td>
                         <h4>' . $product['product_name'] . '</h4>

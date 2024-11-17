@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 $category = new catgoryModel;
 
 $html_list_category = '';

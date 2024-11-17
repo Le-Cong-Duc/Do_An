@@ -29,29 +29,26 @@ $html_show_product = $show_product->show_product_u($data['more_product']);
             <div class="des">
 
                 <h3> Mô Tả</h3>
-                <?= $detail_product['description']?>
+                <?= $detail_product['description'] ?>
             </div>
 
 
-            <p class="price"><?=$detail_product['price'].'.000 VNĐ'?></p>
-
-            <div class="quantity">
-                <button onclick="changeQuantity(-1)">-</button>
-                <input type="number" id="quantity" value="1" min="1">
-                <button onclick="changeQuantity(1)">+</button>
-            </div>
+            <p class="price">
+                <?= $detail_product['price'] . '.000 VNĐ' ?>
+            </p>
 
             <div class="button">
-                <button class="btn_card" onclick="buyProduct()">Thêm Giỏ Hàng</button>
+                <button type="button" class="btn_card" name="giohang" onclick="buyProduct()">Thêm Giỏ Hàng</button>
                 <button class="btn_buy" onclick="buyProduct()">Mua Ngay</button>
             </div>
+            </form>
         </div>
     </div>
 
     <section id="product">
         <h3 class="more_option"> SẢN PHẨM CÓ LIÊN QUAN </h3>
         <div class="pro-container">
-            <?= $html_show_product?>
+            <?= $html_show_product ?>
         </div>
         <button id="load-more">Xem thêm</button>
     </section>

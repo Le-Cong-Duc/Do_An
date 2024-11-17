@@ -35,15 +35,9 @@ $html_show_product = $show_product->show_product($data['more_product']);
 
             <p class="price"><?=$detail_product['price'].'.000 VNĐ'?></p>
 
-            <div class="quantity">
-                <button onclick="changeQuantity(-1)">-</button>
-                <input type="number" id="quantity" value="1" min="1">
-                <button onclick="changeQuantity(1)">+</button>
-            </div>
-
+        
             <div class="button">
-                <button class="btn_card" onclick="buyProduct()">Thêm Giỏ Hàng</button>
-                <button class="btn_buy" onclick="buyProduct()">Mua Ngay</button>
+                <button class="btn_card" onclick="location.href='index.php?action=sign_in'">Đăng nhập để mua hàng</button>
             </div>
         </div>
     </div>
@@ -53,32 +47,11 @@ $html_show_product = $show_product->show_product($data['more_product']);
         <div class="pro-container">
             <?= $html_show_product?>
         </div>
-        <button id="load-more">Xem thêm</button>
     </section>
 
 </div>
 
-<?php include('footer.php') ?>
 
-
-
-<script src="script.js"></script>
-<script src="scj.js"></script>
-<script>
-    function changeQuantity(amount) {
-        let quantity = document.getElementById("quantity");
-        let currentQuantity = parseInt(quantity.value);
-        if (currentQuantity + amount > 0) {
-            quantity.value = currentQuantity + amount;
-        }
-    }
-
-    function buyProduct() {
-        let quantity = document.getElementById("quantity").value;
-        alert("Bạn đã thêm " + quantity + " sản phẩm vào giỏ hàng!");
-    }
-
-</script>
 </body>
 
 </html>

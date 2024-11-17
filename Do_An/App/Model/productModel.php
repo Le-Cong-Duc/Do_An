@@ -143,14 +143,6 @@ class productModel
                     </h4>
                 </div>
 
-                <form action="" method = "post" >
-                    <input type ="hidden" name = "product_id" value = "' . $product['product_id'] . '">
-                    <input type ="hidden" name = "product_name" value = "' . $product['product_name'] . '">
-                    <input type ="hidden" name = "product_img" value = "' . $product['product_img'] . '">
-                    <input type ="hidden" name = "product_price" value = "' . $product['price'] . '">
-
-                
-                </form>
             </a>';
         }
 
@@ -202,16 +194,11 @@ class productModel
                 ' . $product['price'] . '.000 VND' . '
                 </h4>
                 </div>
-                
-                <form action="App/Controller/User/CartController_user.php" method="POST" class="form-box login-form">
-                    <input type ="hidden" name = "product_id" value = "' . $product['product_id'] . '">
-                    <input type ="hidden" name = "product_name" value = "' . $product['product_name'] . '">
-                    <input type ="hidden" name = "product_img" value = "' . $product['product_img'] . '">
-                    <input type ="hidden" name = "product_price" value = "' . $product['price'] . '">
-                    
-                    <a class="btn" type="submit" href="index.php?action=cart_u" name="add_cart" >
-                        <i class="fal ti-shopping-cart cart"></i>
-                    </a>
+            
+                <form action = "index.php?action=cart_u" method = "post">
+                <button class="btn" type="submit" name="add_to_cart" >
+                    <i class="fal ti-shopping-cart cart"></i>
+                </button>
                 </form>
             </a>';
         }

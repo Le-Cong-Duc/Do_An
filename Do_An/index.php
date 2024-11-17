@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = [];
+}
 
 require_once "App/config/database.php";
 require_once "App/Model/databaseModel.php";
@@ -45,11 +49,10 @@ if (isset($_GET['action'])) {
             break;
         case 'cart':
             include 'App/View/Home/cart.php';
-            break;
-
+            break;       
         case 'cart_u':
             $cart_u = new CartController_U;
-            $cart_u->add_cart();
+            $cart_u->index();
             break;
         case 'sign_in':
             $sign = new SignInController;
