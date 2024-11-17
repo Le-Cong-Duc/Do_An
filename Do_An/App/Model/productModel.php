@@ -195,7 +195,7 @@ class productModel
                 </h4>
                 </div>
             
-                <form action = "index.php?action=cart_u" method = "post">
+                <form action = "index.php?action=add_cart_u" method = "post">
                     <input type="hidden" name="IDSP" value="' . $product['product_id'] . '">
                     <input type="hidden" name="name" value="' . $product['product_name'] . '">
                     <input type="hidden" name="img" value="' . $product['product_img'] . '">

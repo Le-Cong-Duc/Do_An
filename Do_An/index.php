@@ -50,15 +50,19 @@ if (isset($_GET['action'])) {
         case 'cart':
             include 'App/View/Home/cart.php';
             break;
-        case 'cart_u':
+        case 'show_cart_u':
+            $cart_u = new CartController_U;
+            $cart_u->index();
+            break;
+        case 'add_cart_u':
             $cart_u = new CartController_U;
             $cart_u->add_cart();
             break;
-        case 'delete_all_cart':
+        case 'delete_all_cart_u':
             $cart_u = new CartController_U;
             $cart_u->delete_all_cart();
             break;
-        case 'delete_cart':
+        case 'delete_cart_u':
             $cart_u = new CartController_U;
             $cart_u->delete_cart();
             break;

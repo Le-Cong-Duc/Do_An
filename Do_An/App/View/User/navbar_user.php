@@ -28,7 +28,7 @@ foreach ($list_category as $category) {
                     <?= $html_list_category ?>
                 </ul>
             </li>
-            <li> <a href="index.php?action=cart_u"><i class="shop-icon ti-shopping-cart"></i></a></li>
+            <li> <a href="index.php?action=show_cart_u"><i class="shop-icon ti-shopping-cart"></i></a></li>
             <li>
                 <form action="index.php?action=search_u" method="post" class="d-flex search">
                     <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm"

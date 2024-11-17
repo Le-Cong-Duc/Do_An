@@ -14,35 +14,42 @@ class cartModel_U
 
         return $this->db->get_all($sql);
     }
-    function show_product($list_product)
+    function show_product()
     {
-        $html_list_product = '';
-        foreach ($list_product as $product) {
-
-            $html_list_product .=
-                '<tr>
-                    <td>
-                        <img src ="' . $product['product_img'] . '">
-                    </td>
-                    <td>
-                        <h4>' . $product['product_name'] . '</h4>
-                    </td>
-                    <td>
-                         <h4>' . $product['price'] . '</h4>
-                    </td>
-                    <td>
-                        <h4>' . $product['quantity'] . '</h4>
-                    </td>
-                    <td>
-                         <h4>' . $product['total'] . '</h4>
-                    </td>
-                    <td>
-                         <input type="checkbox">
-                    </td>
-                </tr>';
+        $html_cart = '';
+        $total_bill = 0;
+        if (count($_SESSION['cart']) > 0) {
+            foreach ($_SESSION['cart'] as $cart) {
+                $total = $cart['price'] * $cart['quantity'];
+                $total_bill += $total;
+                $html_cart .=
+                    '<tr>
+                        <td>
+                            <img src="' . $cart['img'] . '">
+                        </td>
+                        <td>
+                            <h4>' . $cart['name'] . '</h4>
+                        </td>
+                        <td>
+                            <h4>' . $cart['price'] . '.000 VND</h4>
+                        </td>
+                        <td>
+                            <h4>' . $cart['quantity'] . '</h4>
+                        </td>
+                        <td>
+                            <h4> ' . $total . '.000 VNĐ </h4>
+                        </td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <a href="index.php?action=delete_cart_u&product_id=' . $cart['id'] . '" class="btn btn-danger" type="submit" > Xóa </a>
+                         </td>
+                    </tr>';
+            }
         }
 
-        return $html_list_product;
+        return ['html_cart' => $html_cart, 'total_bill' => $total_bill];
     }
 
 }
