@@ -68,8 +68,8 @@ if (isset($_GET['action'])) {
             $search->search();
             break;
         case 'search_a':
-            // $search = new ProductController_A;
-            // $search->search();
+            $search = new ProductController_A;
+            $search->search();
             break;
         case 'user':
             $user = new HomeController_U;
@@ -94,7 +94,6 @@ if (isset($_GET['action'])) {
             $category_a = new ProductController_A;
             $category_a->update_category();
             break;
-
         case 'product_a':
             $product_a = new ProductController_A;
             $product_a->product();

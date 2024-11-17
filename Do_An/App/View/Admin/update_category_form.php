@@ -20,7 +20,6 @@
 
         <input type="hidden" name="category_id" value="<?= $data['category_id'] ?>">
         <input type="submit" class="btn btn-success" name="update" value="Cập nhật">
-        <input type="submit" class="btn btn-danger" value="Hủy">
     </form>
 
 </section>

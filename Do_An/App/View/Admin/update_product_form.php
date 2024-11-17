@@ -35,6 +35,6 @@
         </div>
 
         <input type="hidden" name="product_id" value="<?= $data['product_id'] ?>">
-        <input type="submit" class="btn btn-success" value="Thêm sản phẩm" name="update">
+        <input type="submit" class="btn btn-success" value="Cập nhật" name="update">
     </form>
 </section>
