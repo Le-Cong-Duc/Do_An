@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['cart'])){
+if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
@@ -49,10 +49,18 @@ if (isset($_GET['action'])) {
             break;
         case 'cart':
             include 'App/View/Home/cart.php';
-            break;       
+            break;
         case 'cart_u':
             $cart_u = new CartController_U;
-            $cart_u->index();
+            $cart_u->add_cart();
+            break;
+        case 'delete_all_cart':
+            $cart_u = new CartController_U;
+            $cart_u->delete_all_cart();
+            break;
+        case 'delete_cart':
+            $cart_u = new CartController_U;
+            $cart_u->delete_cart();
             break;
         case 'sign_in':
             $sign = new SignInController;

@@ -189,16 +189,20 @@ class productModel
                 <div class="star">                    
                 ' . $evaluate . '
                 </div>
-                
+
                 <h4>
                 ' . $product['price'] . '.000 VND' . '
                 </h4>
                 </div>
             
                 <form action = "index.php?action=cart_u" method = "post">
-                <button class="btn" type="submit" name="add_to_cart" >
-                    <i class="fal ti-shopping-cart cart"></i>
-                </button>
+                    <input type="hidden" name="IDSP" value="' . $product['product_id'] . '">
+                    <input type="hidden" name="name" value="' . $product['product_name'] . '">
+                    <input type="hidden" name="img" value="' . $product['product_img'] . '">
+                    <input type="hidden" name="price" value="' . $product['price'] . '">
+                    <button class="btn" type="submit" name="add_cart" >
+                        <i class="fal ti-shopping-cart cart"></i>
+                    </button>
                 </form>
             </a>';
         }

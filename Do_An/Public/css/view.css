@@ -530,6 +530,7 @@
 
 #cart table tr td img {
     width: 100%;
+    height: 130px;
     padding: 5px;
     border-radius: 30px;
 }
