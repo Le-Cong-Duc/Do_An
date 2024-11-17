@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #ccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-image: url('../img/slider/b2.png'); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+.container{
+    width: 450px;
+    height: 600px;
+    border: 3px solid rgba(255, 255, 255,0.2);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    margin: 10% 0;
+}
+
+.form-col{
+   position: relative; 
+   width: 100%;
+}
+
+.btn-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn{
+    border: none;   
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: .2s;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn-login{
+    background: rgba(0,0,0,0.5);
+}
+
+.forgot-pass{
+   display: flex;
+   justify-content: center;
+   gap: 5px;
+}
+.forgot-pass a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.input-box span{
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-btn:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.forgot-pass a:hover{
+    text-decoration: underline;
+}
+
+.form-box{
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+    transition: .3s;
+}
+
+.form-title{
+    margin: 40px 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+}
+.login-form{
+    left: 50%;
+}
+
+.register-form{
+    left: -50%;
+    overflow: hidden;
+    color: #fff;
+}
+
+.form-inputs{
+    width: 100%;
+}
+
+.input-box{
+    position: relative;
+}
+.inputs{
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.input-field{
+    font-size: 16px;
+    padding: 0 40px 0 20px;
+    background-color: rgba(255, 255, 255,0.2);
+    outline: none;
+    backdrop-filter: blur(20px);
+}
+::placeholder{
+    color: #fff;
+    font-size: 15px;
+}
+.input-box .icons{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 17px;
+    height: 17px;
+}
+
