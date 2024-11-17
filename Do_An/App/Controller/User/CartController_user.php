@@ -17,21 +17,23 @@ class CartController_U extends BaseController_U
     {
         $this->titePage = 'No Cart';
         if (isset($_POST['add_cart'])) {
-            $IDSP = $_POST['IDSP'];
-            $name = $_POST['name'];
-            $img = $_POST['img'];
-            $price = $_POST['price'];
-            $quantity = 1;
+
+            $product_id = $_POST['product_id'];
+            $product_name = $_POST['product_name'];
+            $product_img = $_POST['product_img'];
+            $product_price = $_POST['product_price'];
+            $product_quantity = $_POST['product_quantity'];
 
             $product = array(
-                'id' => $IDSP,
-                'name' => $name,
-                'img' => $img,
-                'price' => $price,
-                'quantity' => $quantity
+                'id' => $product_id,
+                'name' => $product_name,
+                'img' => $product_img,
+                'price' => $product_price,
+                'quantity' => $product_quantity
             );
 
-            $_SESSION['cart'][$IDSP] = $product;
+
+            $_SESSION['cart'][$product_id] = $product;
             $this->titePage = 'Add To Cart';
         }
         $this->View('cart_user', $this->titePage, $this->data);

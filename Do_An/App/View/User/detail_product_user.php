@@ -32,16 +32,27 @@ $html_show_product = $show_product->show_product_u($data['more_product']);
                 <?= $detail_product['description'] ?>
             </div>
 
+            <div class="quantity">
+                <button onclick="changeQuantity(-1)">-</button>
+                <input type="number" name="product_quantity" id="quantity" value="1" min="1">
+                <button onclick="changeQuantity(1)">+</button>
+            </div>
 
             <p class="price">
                 <?= $detail_product['price'] . '.000 VNĐ' ?>
             </p>
 
-            <div class="button">
-                <button type="button" class="btn_card" name="giohang" onclick="buyProduct()">Thêm Giỏ Hàng</button>
-                <button class="btn_buy" onclick="buyProduct()">Mua Ngay</button>
-            </div>
+            <form action="index.php?action=add_cart_u" method="post">
+                <input type="hidden" name="product_id" value="<?=$detail_product['product_id']?>">
+                <input type="hidden" name="product_name" value="<?=$detail_product['product_name']?>">
+                <input type="hidden" name="product_img" value="<?=$detail_product['product_img']?>">
+                <input type="hidden" name="product_price" value="<?=$detail_product['price']?>">
+                <input type="hidden" name="product_quantity" value="1">
+                <button class="btn" type="submit" name="add_cart">
+                   Thêm vào giỏ hàng
+                </button>
             </form>
+
         </div>
     </div>
 

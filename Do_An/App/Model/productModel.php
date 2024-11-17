@@ -194,16 +194,18 @@ class productModel
                 ' . $product['price'] . '.000 VND' . '
                 </h4>
                 </div>
-            
+
                 <form action = "index.php?action=add_cart_u" method = "post">
-                    <input type="hidden" name="IDSP" value="' . $product['product_id'] . '">
-                    <input type="hidden" name="name" value="' . $product['product_name'] . '">
-                    <input type="hidden" name="img" value="' . $product['product_img'] . '">
-                    <input type="hidden" name="price" value="' . $product['price'] . '">
-                    <button class="btn" type="submit" name="add_cart" >
-                        <i class="fal ti-shopping-cart cart"></i>
-                    </button>
-                </form>
+                <input type="hidden" name="product_id" value="'.$product['product_id'].'">
+                <input type="hidden" name="product_name" value="'.$product['product_name'].'">
+                <input type="hidden" name="product_img" value="'.$product['product_img'].'">
+                <input type="hidden" name="product_price" value="'.$product['price'].'">
+                <input type="hidden" name="product_quantity" value="1">
+                <button class="btn" type="submit" name="add_cart" >
+                    <i class="fal ti-shopping-cart cart"></i>
+                </button>
+            </form>
+              
             </a>';
         }
 
