@@ -161,29 +161,13 @@ class ProductController_A extends BaseController_A
     }
     function search()
     {
-        print('ok');
         if (isset($_POST['btn_search'])) {
-            print('ok');
-
             $product_name = $_POST['txt_search'];
         }
 
         $this->data['list_product_name'] = $this->product->get_all_product_by_name($product_name);
 
-        if (isset($_GET['category_id'])) {
-            $category_id = $_GET['category_id'];
-        } else {
-            $category_id = 1;
-        }
-        $this->data['category'] = $this->category->get_one_category($category_id);
-
         $this->data['list_category'] = $this->category->get_all_category();
-        if (isset($_GET['product_id'])) {
-            $product_id = $_GET['product_id'];
-        } else {
-            $product_id = 1;
-        }
-        $this->data['product'] = $this->product->get_one_product($product_id);
 
         $this->View('search_admin', $this->titePage, $this->data);
     }

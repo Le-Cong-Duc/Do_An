@@ -10,23 +10,23 @@ $customer = $data['customer'];
     <form class="mb-3" action="index.php?action=buy_cart_u" method="post" enctype="multipart/form-data">
 
         <div class="mb-3 input-group">
-            <label style="width: 20%;" class="form-label">Customer Name</label>
-            <input type="text" class="form-control" name="name" value="<?= $customer['customer_name'] ?>">
+            <label style="width: 20%;" class="form-label">Name</label>
+            <input type="text" class="form-control" name="customer_name" value="<?= $customer['customer_name'] ?>">
         </div>
 
         <div class="mb-3 input-group">
-            <label style="width: 20%;" class="form-label">Customer email</label>
-            <input type="text" class="form-control" name="email" value="<?= $customer['customer_email'] ?>">
+            <label style="width: 20%;" class="form-label">Email</label>
+            <input type="text" class="form-control" name="customer_email" value="<?= $customer['customer_email'] ?>">
         </div>
 
         <div class="mb-3 input-group">
-            <label style="width: 20%;" class="form-label">Customer phone:</label>
-            <input type="text" class="form-control" name="phone" value="<?= $customer['customer_phone'] ?>">
+            <label style="width: 20%;" class="form-label">Numberphone:</label>
+            <input type="text" class="form-control" name="customer_phone" value="<?= $customer['customer_phone'] ?>">
         </div>
 
         <div class="mb-3 input-group">
-            <label style="width: 20%;" class="form-label">Customer address:</label>
-            <input type="text" class="form-control" name="address" value="<?= $customer['customer_adress'] ?>">
+            <label style="width: 20%;" class="form-label">Address:</label>
+            <input type="text" class="form-control" name="customer_address" value="<?= $customer['customer_adress'] ?>">
         </div>
 
 
@@ -42,13 +42,12 @@ $customer = $data['customer'];
 
         <div class="mb-3 input-group">
             <label style="width: 20%;" class="form-label">Total bill</label>
-            <input type="text" class="form-control" name="total" value="<?= $data['total'] ?>">
+            <input type="text" class="form-control" name="total" value="<?=$data['total']?>">.000 VNĐ
         </div>
 
         <div class="mb-3 input-group">
             <label style="width: 20%;" class="form-label">Payment method</label>
             <select name="payment" class="form-control">
-                <option>>>--Chọn phương thức thanh toán--<<</option>
                 <option>Thanh toán khi nhận hàng</option>
                 <option>Thanh toán bằng chuyển khoản</option>
             </select>
@@ -56,7 +55,9 @@ $customer = $data['customer'];
 
         <div class="input-group">
             <input type="hidden" name="customer_id" value="<?= $customer['customer_id'] ?>">
-            <input type="submit" class="btn btn-success" name="update" value="Thanh Toán">
+            <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
+            <input type="hidden" name="product_img" value="<?=$product['product_img']?>">
+            <input type="submit" class="btn btn-success" name="thanhtoan" value="Thanh Toán">
             <a href="index.php?action=show_cart_u" class="btn btn-danger">Hủy</a>
         </div>
 

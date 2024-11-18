@@ -7,8 +7,7 @@ $product = new productModel;
 
 $html_category = $category->show_nav_category_a($data['list_category']);
 $html_product = $product->show_product_a($data['list_product_name']);
-$category_id = $data['category']['category_id'];
-$product_name = $data['product']['product_name'];
+
 ?>
 
 <section id="main">

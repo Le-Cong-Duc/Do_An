@@ -25,6 +25,7 @@ require_once "App/Controller/User/CartController_user.php";
 
 require_once "App/Controller/Admin/BaseController_admin.php";
 require_once "App/Controller/Admin/HomeController_admin.php";
+require_once "App/Controller/Admin/BillController.php";
 require_once "App/Controller/Admin/ProductController_admin.php";
 require_once "App/Controller/Admin/CustomerController.php";
 
@@ -69,6 +70,10 @@ if (isset($_GET['action'])) {
         case 'check_cart_u':
             $cart_u = new CartController_U;
             $cart_u->check_cart();
+            break;
+        case 'buy_cart_u':
+            $cart_u = new CartController_U;
+            $cart_u->buy_cart();
             break;
         case 'sign_in':
             $sign = new SignInController;
@@ -144,6 +149,22 @@ if (isset($_GET['action'])) {
         case 'update_customer':
             $customer = new CustomerController;
             $customer->update_customer();
+            break;
+        case 'bill':
+            $bill = new BillController;
+            $bill->bill();
+            break;
+        case 'delete_bill':
+            $bill = new BillController;
+            $bill->delet_bill();
+            break;
+        case 'update_bill':
+            $bill = new BillController;
+            $bill->update_bill();
+            break;
+        case 'search_bill':
+            $bill = new BillController;
+            $bill->search_bill();
             break;
         default:
             break;

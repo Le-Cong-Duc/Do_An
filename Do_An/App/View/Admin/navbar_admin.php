@@ -9,7 +9,7 @@
             <li> <a href="index.php?action=admin">Trang chủ</a></li>
             <li> <a href="index.php?action=category_a">Sản phẩm</a></li>
             <li> <a href="index.php?action=customer">Khách Hàng</a></li>
-            <li> <a href="#">Đơn hàng</a></li>
+            <li> <a href="index.php?action=bill">Đơn hàng</a></li>
             <li>
                 <form class="d-flex search">
                     <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">

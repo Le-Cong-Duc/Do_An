@@ -54,9 +54,9 @@ class customerModel
     }
     function show_customer($list_customer)
     {
-        $html_list_category = '';
+        $html_list_customer = '';
         foreach ($list_customer as $customer) {
-            $html_list_category .=
+            $html_list_customer .=
                 '<tr>
             <td>' . $customer['customer_id'] . '</td>
             <td>' . $customer['customer_name'] . '</td>
@@ -71,7 +71,7 @@ class customerModel
                     class="btn btn-danger">Xóa</a> </td>
         </tr>';
         }
-        return $html_list_category;
+        return $html_list_customer;
     }
 
 

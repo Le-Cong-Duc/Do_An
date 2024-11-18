@@ -8,11 +8,40 @@ class cartModel_U
         $this->db = new databaseModel;
     }
 
-    function get_all_order()
+
+    function get_all_bill()
     {
-        $sql = 'SELECT * FROM `order`';
+        $sql = 'SELECT * FROM bill';
+        return $this->db->get_all($sql);
+    }
+
+    function get_all_bill_by_name($customer_name)
+    {
+        $sql = 'SELECT * FROM bill WHERE customer_name LIKE "%' . $customer_name . '%"';
 
         return $this->db->get_all($sql);
+    }
+
+    function delete_bill($bill_id)
+    {
+        $sql = 'DELETE FROM bill WHERE bill_id = ' . $bill_id;
+        return $this->db->exec($sql);
+    }
+
+    function update_bill($bill_id, $status)
+    {
+
+        $sql = "UPDATE bill
+            SET status ='$status'
+            WHERE bill_id = " . $bill_id;
+
+        return $this->db->exec($sql);
+    }
+    function insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $total, $status, $payment)
+    {
+        $sql = 'INSERT INTO bill(customer_id,product_id, product_name, product_img, customer_name, customer_email,customer_phone, customer_address, total_bill, status, payment_method) 
+        VALUE (' . $customer_id . ',' . $product_id . ',"' . $product_name . '","' . $product_img . '","' . $customer_name . '","' . $customer_email . '","' . $customer_phone . '","' . $customer_address . '",' . $total . ',"' . $status . '",' . $payment . ')';
+        return $this->db->exec($sql);
     }
     function show_product()
     {
@@ -57,6 +86,43 @@ class cartModel_U
 
         return ['html_cart' => $html_cart, 'total_bill' => $total_bill];
     }
+
+    function show_bill($list_bill)
+    {
+        $html_list_bill = '';
+        foreach ($list_bill as $bill) {
+            if ($bill['payment_method'] == 1) {
+                $bill['payment_method'] = 'Thanh toán khi nhận hàng';
+            } else {
+                $bill['payment_method'] = 'Thanh toán bằng chuyển khoản';
+            }
+
+            $html_list_bill .=
+                '<tr>
+                <td>' . $bill['customer_name'] . '</td>
+                <td>' . $bill['customer_email'] . '</td>
+                <td>' . $bill['customer_phone'] . '</td>
+                <td>' . $bill['customer_address'] . '</td>
+                <td>' . $bill['product_name'] . '</td>
+                <td> <img src="' . $bill['product_img'] . '" width = 150px > </td>
+                <td>' . $bill['total_bill'] . '</td>
+                <td>' . $bill['status'] . '</td>
+                <td>' . $bill['payment_method'] . '</td>
+                
+                <td>
+                <a href="index.php?action=delete_bill&bill_id= ' . $bill['bill_id'] . ' "
+                        class="btn btn-danger">Xóa</a> 
+                </td>
+                <td>
+                <a href="index.php?action=update_bill&bill_id= ' . $bill['bill_id'] . '"
+                        class="btn btn-success">Duyệt</a> 
+                </td>
+            </tr>';
+        }
+        return $html_list_bill;
+    }
+
+
 
 }
 

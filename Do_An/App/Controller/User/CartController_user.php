@@ -68,10 +68,36 @@ class CartController_U extends BaseController_U
             $customer_id = $_SESSION['user_id'];
 
             $this->data['product'] = $this->product->get_one_product($product_id);
-            $this->data['total'] = $total_bill.'.000 VNĐ';
+            $this->data['total'] = $total_bill;
             $this->data['customer'] = $this->customer->get_one_customer($customer_id);
         }
         $this->View('buy_cart', $this->titePage, $this->data);
+    }
+
+    function buy_cart()
+    {
+        if (isset($_POST['thanhtoan'])) {
+            $customer_id = $_POST['customer_id'];
+            $customer_name = $_POST['customer_name'];
+            $customer_email = $_POST['customer_email'];
+            $customer_phone = $_POST['customer_phone'];
+            $customer_address = $_POST['customer_address'];
+            $product_id = $_POST['product_id'];
+            $product_name = $_POST['product_name'];
+            $product_img = $_POST['product_img'];
+            $total = $_POST['total'];
+            $status = 'Chưa duyệt';
+            $payment = $_POST['payment'];
+
+            if ($payment = 'Thanh toán khi nhận hàng') {
+                $payment = 1;
+            } else {
+                $payment = 0;
+            }
+            
+            $this->cart->insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $total,$status, $payment);
+            header('location:index.php?action=show_cart_u');
+        }
     }
 }
 ?>
