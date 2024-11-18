@@ -40,11 +40,16 @@ class cartModel_U
                             <h4> ' . $total . '.000 VNĐ </h4>
                         </td>
                         <td>
-                            <input type="checkbox">
+                            <a href="index.php?action=delete_cart_u&product_id=' . $cart['id'] . '" class="btn btn-danger" type="submit" > Xóa </a>
                         </td>
                         <td>
-                            <a href="index.php?action=delete_cart_u&product_id=' . $cart['id'] . '" class="btn btn-danger" type="submit" > Xóa </a>
-                            <a href="#" class="btn btn-success" type="submit" > Mua </a>
+                            <form action="index.php?action=check_cart_u" method="post">
+                                <input type="hidden" name="product_id" value = "' . $cart['id'] . '" >
+                                <input type="hidden" name="total" value = "' . $total . '" >
+                                <button class="btn btn-success" type="submit" name="buy"> Mua </button>
+                            </form>
+
+                            
                          </td>
                     </tr>';
             }

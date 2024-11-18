@@ -66,6 +66,10 @@ if (isset($_GET['action'])) {
             $cart_u = new CartController_U;
             $cart_u->delete_cart();
             break;
+        case 'check_cart_u':
+            $cart_u = new CartController_U;
+            $cart_u->check_cart();
+            break;
         case 'sign_in':
             $sign = new SignInController;
             $sign->sign();

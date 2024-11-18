@@ -2,10 +2,13 @@
 class CartController_U extends BaseController_U
 {
     private $cart;
+    private $product;
+    private $customer;
     function __construct()
     {
         $this->cart = new cartModel_U;
-
+        $this->product = new productModel;
+        $this->customer = new customerModel;
     }
     function index()
     {
@@ -55,6 +58,20 @@ class CartController_U extends BaseController_U
         unset($_SESSION['cart'][$product_id]);
 
         $this->View('cart_user', $this->titePage, $this->data);
+    }
+
+    function check_cart()
+    {
+        if (isset($_POST['buy']) && isset($_SESSION['user_id'])) {
+            $product_id = $_POST['product_id'];
+            $total_bill = $_POST['total'];
+            $customer_id = $_SESSION['user_id'];
+
+            $this->data['product'] = $this->product->get_one_product($product_id);
+            $this->data['total'] = $total_bill.'.000 VNĐ';
+            $this->data['customer'] = $this->customer->get_one_customer($customer_id);
+        }
+        $this->View('buy_cart', $this->titePage, $this->data);
     }
 }
 ?>
