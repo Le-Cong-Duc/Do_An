@@ -40,9 +40,6 @@ $html_list_product_4 = $show_product->show_product_u($data['list_product_4']);
 
             <a href="index.php?action=product_u&category_id=1" class="pro">
                 <img style="opacity: 0.3;" src="Public/img/see_more.jpeg" alt="">
-                <a href="#" style="opacity: 0;">
-                    <i class="fal ti-shopping-cart cart"></i>
-                </a>
             </a>
         </div>
 
@@ -54,9 +51,6 @@ $html_list_product_4 = $show_product->show_product_u($data['list_product_4']);
 
             <a href="index.php?action=product_u&category_id=2" class="pro">
                 <img style="opacity: 0.3;" src="Public/img/see_more.jpeg" alt="">
-                <a href="#" style="opacity: 0;">
-                    <i class="fal ti-shopping-cart cart"></i>
-                </a>
             </a>
         </div>
 
@@ -68,9 +62,6 @@ $html_list_product_4 = $show_product->show_product_u($data['list_product_4']);
 
             <a href="index.php?action=product_u&category_id=3" class="pro">
                 <img style="opacity: 0.3;" src="Public/img/see_more.jpeg" alt="">
-                <a href="#" style="opacity: 0;">
-                    <i class="fal ti-shopping-cart cart"></i>
-                </a>
             </a>
         </div>
 
@@ -82,9 +73,6 @@ $html_list_product_4 = $show_product->show_product_u($data['list_product_4']);
 
             <a href="index.php?action=product_u&category_id=4" class="pro">
                 <img style="opacity: 0.3;" src="Public/img/see_more.jpeg" alt="">
-                <a href="#" style="opacity: 0;">
-                    <i class="fal ti-shopping-cart cart"></i>
-                </a>
             </a>
         </div>
 

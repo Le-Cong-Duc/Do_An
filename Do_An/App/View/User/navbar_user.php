@@ -41,7 +41,7 @@ foreach ($list_category as $category) {
             <li>
                 Chào mừng ,
                 <?= $_SESSION['username'] ?>
-                <a href="/Do_An/index.php?action=sign_in">Dang xuat</a>
+                <a href="index.php?action=sign_in">Dang xuat</a>
             </li>
         </ul>
 

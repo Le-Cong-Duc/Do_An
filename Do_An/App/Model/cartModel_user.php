@@ -44,6 +44,7 @@ class cartModel_U
                         </td>
                         <td>
                             <a href="index.php?action=delete_cart_u&product_id=' . $cart['id'] . '" class="btn btn-danger" type="submit" > Xóa </a>
+                            <a href="#" class="btn btn-success" type="submit" > Mua </a>
                          </td>
                     </tr>';
             }

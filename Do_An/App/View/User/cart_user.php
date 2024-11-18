@@ -29,11 +29,12 @@ $total_bill = $data['total_bill'];
     <div id="main">
         <div class="section_left">
             <a href="index?action=delete_all_cart_u" class="btn btn-danger">Xóa giỏ hàng</a>
+            <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
         </div>
         <div class="section_right">
             <label>Tổng tiền</label>
             <span style="font-weight: 600;">
-                <?= $total_bill ?>.000 VNĐ"
+                <?= $total_bill ?>.000 VNĐ
             </span>
         </div>
     </div>

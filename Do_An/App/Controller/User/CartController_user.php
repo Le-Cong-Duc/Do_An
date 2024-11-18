@@ -32,8 +32,8 @@ class CartController_U extends BaseController_U
                 'quantity' => $product_quantity
             );
 
-
             $_SESSION['cart'][$product_id] = $product;
+
             $this->titePage = 'Add To Cart';
         }
         $this->View('cart_user', $this->titePage, $this->data);
