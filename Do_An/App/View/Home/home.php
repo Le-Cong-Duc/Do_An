@@ -33,7 +33,6 @@ $html_list_product_4 = $show_product->show_product($data['list_product_4']);
         <?= $html_list_category; ?>
     </section>
 
-
     <section id="product">
 
         <h4>Đặc sản bánh kẹo </h4>
@@ -78,7 +77,7 @@ $html_list_product_4 = $show_product->show_product($data['list_product_4']);
                 <img style="opacity: 0.3;" src="Public/img/see_more.jpeg" alt="">
             </a>
         </div>
-        
+
     </section>
 </div>
 

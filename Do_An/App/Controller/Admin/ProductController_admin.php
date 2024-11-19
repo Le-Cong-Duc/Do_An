@@ -11,9 +11,9 @@ class ProductController_A extends BaseController_A
     }
     function category()
     {
-        $this->titePage = 'CAtegory';
-
+        
         $this->data['list_category'] = $this->category->get_all_category();
+        $this->titePage = 'Category admin';
 
         $this->View('category_admin', $this->titePage, $this->data);
     }
@@ -74,19 +74,19 @@ class ProductController_A extends BaseController_A
         } else {
             $category_id = 1;
         }
-        $this->titePage = 'Da Nang Gorment';
         $this->data['category'] = $this->category->get_one_category($category_id);
-
+        
         $this->data['list_category'] = $this->category->get_all_category();
-
+        
         $this->data['list_product'] = $this->product->get_all_product($category_id, 50);
-
+        
         if (isset($_GET['product_id'])) {
             $product_id = $_GET['product_id'];
         } else {
             $product_id = 1;
         }
         $this->data['product'] = $this->product->get_one_product($product_id);
+        $this->titePage = 'Product Admin';
 
         $this->View('product_admin', $this->titePage, $this->data);
     }
@@ -168,6 +168,8 @@ class ProductController_A extends BaseController_A
         $this->data['list_product_name'] = $this->product->get_all_product_by_name($product_name);
 
         $this->data['list_category'] = $this->category->get_all_category();
+
+        $this->titePage = 'Search admin';
 
         $this->View('search_admin', $this->titePage, $this->data);
     }

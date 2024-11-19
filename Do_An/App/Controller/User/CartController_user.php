@@ -12,7 +12,7 @@ class CartController_U extends BaseController_U
     }
     function index()
     {
-        $this->titePage = 'Add To Cart';
+        $this->titePage = 'Cart';
         $this->View('cart_user', $this->titePage, $this->data);
     }
 
@@ -47,7 +47,7 @@ class CartController_U extends BaseController_U
                 $_SESSION['cart'][$product_id] = $product;
             }
 
-            $this->titePage = 'Add To Cart';
+            $this->titePage = 'Cart';
         }
         $this->View('cart_user', $this->titePage, $this->data);
     }

@@ -11,7 +11,8 @@ class BillController extends BaseController_A
     function bill()
     {
 
-        $this->titePage = 'bill';
+        $this->titePage = 'Bill admin';
+        
         $this->data['list_bill'] = $this->cart->get_all_bill();
 
         $this->View('bill_admin', $this->titePage, $this->data);
@@ -44,6 +45,8 @@ class BillController extends BaseController_A
         }
 
         $this->data['list_bill'] = $this->cart->get_all_bill_by_name($customer_name);
+
+        $this->titePage = 'Search Bill';
 
         $this->View('search_bill', $this->titePage, $this->data);
     }

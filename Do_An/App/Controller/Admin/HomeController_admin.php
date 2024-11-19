@@ -10,6 +10,7 @@ class HomeController_A extends BaseController_A
         $this->category = new catgoryModel;
     }
     
+    
 }
 
 ?>

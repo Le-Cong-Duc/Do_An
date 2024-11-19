@@ -10,7 +10,7 @@ class CustomerController extends BaseController_A
 
     function customer()
     {
-        $this->titePage = 'Customer';
+        $this->titePage = 'Customer Admin';
 
         $this->data['list_customer'] = $this->customer->get_all_customer();
 

@@ -131,7 +131,7 @@ class productModel
 
             $html_list_product .=
 
-                '<a href = "index.php?action=detail_product&product_id=' . $product['product_id'] . '"" class ="pro" >
+                '<a  href = "index.php?action=detail_product&product_id=' . $product['product_id'] . '"" class ="pro" >
                 <img src="' . $product['product_img'] . ' " width="300" height="300" alt="">
                 <div class="des">
                     <h5>

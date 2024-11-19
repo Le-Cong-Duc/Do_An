@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title> <?=$titlePage?> </title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="Public/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="Public/css/view.css">

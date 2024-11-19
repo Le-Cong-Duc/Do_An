@@ -21,7 +21,7 @@ class CartController_A extends BaseController_A
             $product_img = $_POST['product_img'];
             $product_price = $_POST['product_price'];
 
-            $this->titePage = 'Add To Cart';
+            $this->titePage = 'Add Cart';
             $this->View('cart_user', $this->titePage, $this->data);
         }
         else{

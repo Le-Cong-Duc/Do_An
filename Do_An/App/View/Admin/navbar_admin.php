@@ -11,14 +11,6 @@
             <li> <a href="index.php?action=customer">Khách Hàng</a></li>
             <li> <a href="index.php?action=bill">Đơn hàng</a></li>
             <li>
-                <form class="d-flex search">
-                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
-                    <button class="btn btn-outline-success me-2" type="submit">
-                        <i class="ti-search"></i>
-                    </button>
-                </form>
-            </li>
-            <li>
                 <?= $_SESSION['username'] ?> 
                 <a href="index.php?action=sign_in">Dang xuat</a>
             </li>

@@ -11,7 +11,7 @@ class ProductController extends BaseController
     }
     function index()
     {
-        $this->titePage = 'Product';
+        $this->titePage = 'Product View';
 
         if (isset($_GET['category_id'])) {
             $category = $_GET['category_id'];
@@ -38,7 +38,8 @@ class ProductController extends BaseController
         $get_detail_product = $this->product->get_one_product($product_id);
 
 
-        $this->titePage = $get_detail_product['product_name'];
+        $this->titePage = 'Detail Product';
+        // $this->titePage = $get_detail_product['product_name'];
 
         $this->data['detail_product'] = $get_detail_product;
 
@@ -55,6 +56,7 @@ class ProductController extends BaseController
             $product_name = $_POST['txt_search'];
         }
         $this->data['list_product'] = $this->product->get_all_product_by_name($product_name);
+        $this->titePage = 'Search';
         $this->View('search', $this->titePage, $this->data);
     }
 }
