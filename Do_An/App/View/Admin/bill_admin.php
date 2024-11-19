@@ -22,6 +22,7 @@ $html_bill = $cart->show_bill($data['list_bill']);
             <th>Customer Address</th>
             <th>Product Name</th>
             <th>Product Img</th>
+            <th>Quantity</th>
             <th>Total</th>
             <th>Status</th>
             <th>Payment method</th>
@@ -30,3 +31,5 @@ $html_bill = $cart->show_bill($data['list_bill']);
         <?= $html_bill; ?>
     </table>
 </section>
+
+<script src="Public/js/view.js"></script>

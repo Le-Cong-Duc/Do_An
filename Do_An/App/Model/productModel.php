@@ -200,7 +200,7 @@ class productModel
                 <input type="hidden" name="product_name" value="'.$product['product_name'].'">
                 <input type="hidden" name="product_img" value="'.$product['product_img'].'">
                 <input type="hidden" name="product_price" value="'.$product['price'].'">
-                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="hidden_quantity" id="hidden_quantity" value="1">
                 <button class="btn" type="submit" name="add_cart" >
                     <i class="fal ti-shopping-cart cart"></i>
                 </button>

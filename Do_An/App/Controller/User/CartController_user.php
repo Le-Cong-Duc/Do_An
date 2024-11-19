@@ -19,23 +19,33 @@ class CartController_U extends BaseController_U
     function add_cart()
     {
         $this->titePage = 'No Cart';
+
         if (isset($_POST['add_cart'])) {
 
             $product_id = $_POST['product_id'];
             $product_name = $_POST['product_name'];
             $product_img = $_POST['product_img'];
             $product_price = $_POST['product_price'];
-            $product_quantity = $_POST['product_quantity'];
+            $product_quantity = $_POST['hidden_quantity'];
 
-            $product = array(
-                'id' => $product_id,
-                'name' => $product_name,
-                'img' => $product_img,
-                'price' => $product_price,
-                'quantity' => $product_quantity
-            );
+            if (!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = array();
+            }
 
-            $_SESSION['cart'][$product_id] = $product;
+            if (isset($_SESSION['cart'][$product_id])) {
+                $_SESSION['cart'][$product_id]['quantity'] += $product_quantity;
+            } else {
+
+                $product = array(
+                    'id' => $product_id,
+                    'name' => $product_name,
+                    'img' => $product_img,
+                    'price' => $product_price,
+                    'quantity' => $product_quantity
+                );
+
+                $_SESSION['cart'][$product_id] = $product;
+            }
 
             $this->titePage = 'Add To Cart';
         }
@@ -66,9 +76,11 @@ class CartController_U extends BaseController_U
             $product_id = $_POST['product_id'];
             $total_bill = $_POST['total'];
             $customer_id = $_SESSION['user_id'];
+            $quantity = $_SESSION['cart'][$product_id]['quantity'];
 
             $this->data['product'] = $this->product->get_one_product($product_id);
             $this->data['total'] = $total_bill;
+            $this->data['quantity'] = $quantity;
             $this->data['customer'] = $this->customer->get_one_customer($customer_id);
         }
         $this->View('buy_cart', $this->titePage, $this->data);
@@ -85,6 +97,7 @@ class CartController_U extends BaseController_U
             $product_id = $_POST['product_id'];
             $product_name = $_POST['product_name'];
             $product_img = $_POST['product_img'];
+            $quantity = $_POST['quantity'];
             $total = $_POST['total'];
             $status = 'Chưa duyệt';
             $payment = $_POST['payment'];
@@ -94,10 +107,25 @@ class CartController_U extends BaseController_U
             } else {
                 $payment = 0;
             }
-            
-            $this->cart->insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $total,$status, $payment);
-            header('location:index.php?action=show_cart_u');
+
+            echo $quantity;
+            $this->cart->insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
+            unset($_SESSION['cart'][$product_id]);
+            echo "<script>alert('Đặt hàng thành công!');</script>";
+            echo "<script>window.location.href='index.php?action=show_cart_u';</script>";
         }
     }
+
+    function bill_cart()
+    {
+        $this->titePage = 'Sản phẩm đã mua';
+        if (isset($_SESSION['user_id'])) {
+            $user_id = $_SESSION['user_id'];
+            $this->data['list_bill'] = $this->cart->get_all_bill_by_id($user_id);
+        }
+
+        $this->View('bill_user', $this->titePage, $this->data);
+    }
+
 }
 ?>

@@ -22,6 +22,13 @@ class cartModel_U
         return $this->db->get_all($sql);
     }
 
+    function get_all_bill_by_id($customer_id)
+    {
+        $sql = 'SELECT * FROM bill WHERE customer_id = ' . $customer_id . '';
+
+        return $this->db->get_all($sql);
+    }
+
     function delete_bill($bill_id)
     {
         $sql = 'DELETE FROM bill WHERE bill_id = ' . $bill_id;
@@ -37,10 +44,11 @@ class cartModel_U
 
         return $this->db->exec($sql);
     }
-    function insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $total, $status, $payment)
+
+    function insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment)
     {
-        $sql = 'INSERT INTO bill(customer_id,product_id, product_name, product_img, customer_name, customer_email,customer_phone, customer_address, total_bill, status, payment_method) 
-        VALUE (' . $customer_id . ',' . $product_id . ',"' . $product_name . '","' . $product_img . '","' . $customer_name . '","' . $customer_email . '","' . $customer_phone . '","' . $customer_address . '",' . $total . ',"' . $status . '",' . $payment . ')';
+        $sql = 'INSERT INTO bill(customer_id,product_id, product_name, product_img, customer_name, customer_email,customer_phone, customer_address, quantity ,total_bill, status, payment_method) 
+        VALUE (' . $customer_id . ',' . $product_id . ',"' . $product_name . '","' . $product_img . '","' . $customer_name . '","' . $customer_email . '","' . $customer_phone . '","' . $customer_address . '",' . $quantity . ',' . $total . ',"' . $status . '",' . $payment . ')';
         return $this->db->exec($sql);
     }
     function show_product()
@@ -105,6 +113,7 @@ class cartModel_U
                 <td>' . $bill['customer_address'] . '</td>
                 <td>' . $bill['product_name'] . '</td>
                 <td> <img src="' . $bill['product_img'] . '" width = 150px > </td>
+                <td>' . $bill['quantity'] . '</td>
                 <td>' . $bill['total_bill'] . '</td>
                 <td>' . $bill['status'] . '</td>
                 <td>' . $bill['payment_method'] . '</td>
@@ -115,14 +124,28 @@ class cartModel_U
                 </td>
                 <td>
                 <a href="index.php?action=update_bill&bill_id= ' . $bill['bill_id'] . '"
-                        class="btn btn-success">Duyệt</a> 
+                class="btn btn-success">Duyệt</a> 
                 </td>
             </tr>';
         }
         return $html_list_bill;
     }
 
+    function show_bill_u($list_bill)
+    {
+        $html_list_bill = '';
+        foreach ($list_bill as $bill) {
 
+            $html_list_bill .=
+                '<tr>
+                <td> <img src="' . $bill['product_img'] . '" width = 150px > </td>
+                <td>' . $bill['product_name'] . '</td>
+                <td>' . $bill['quantity'] . '</td>
+                <td>' . $bill['total_bill'] . '</td>
+            </tr>';
+        }
+        return $html_list_bill;
+    }
 
 }
 

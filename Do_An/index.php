@@ -75,6 +75,10 @@ if (isset($_GET['action'])) {
             $cart_u = new CartController_U;
             $cart_u->buy_cart();
             break;
+        case 'bill_u':
+            $cart_u = new CartController_U;
+            $cart_u->bill_cart();
+            break;
         case 'sign_in':
             $sign = new SignInController;
             $sign->sign();
@@ -99,6 +103,7 @@ if (isset($_GET['action'])) {
             $user = new HomeController_U;
             $user->index();
             break;
+
         case 'admin':
             include("App/View/Admin/home_admin.php");
             break;

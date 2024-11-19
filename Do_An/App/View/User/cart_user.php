@@ -32,6 +32,7 @@ $total_bill = $data['total_bill'];
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
         </div>
         <div class="section_right">
+            <a href="index?action=bill_u" class="btn btn-primary">Mặt hàng đã mua</a>
             <label>Tổng tiền</label>
             <span style="font-weight: 600;">
                 <?= $total_bill ?>.000 VNĐ

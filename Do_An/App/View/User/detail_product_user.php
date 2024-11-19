@@ -33,21 +33,23 @@ $html_show_product = $show_product->show_product_u($data['more_product']);
             </div>
 
             <div class="quantity">
+                <button onclick="changeQuantity(-1)">-</button>
                 <input type="number" name="product_quantity" id="quantity" value="1" min="1">
+                <button onclick="changeQuantity(1)">+</button>
             </div>
 
             <p class="price">
                 <?= $detail_product['price'] . '.000 VNĐ' ?>
-            </p> 
+            </p>
 
             <form action="index.php?action=add_cart_u" method="post">
-                <input type="hidden" name="product_id" value="<?=$detail_product['product_id']?>">
-                <input type="hidden" name="product_name" value="<?=$detail_product['product_name']?>">
-                <input type="hidden" name="product_img" value="<?=$detail_product['product_img']?>">
-                <input type="hidden" name="product_price" value="<?=$detail_product['price']?>">
-                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_id" value="<?= $detail_product['product_id'] ?>">
+                <input type="hidden" name="product_name" value="<?= $detail_product['product_name'] ?>">
+                <input type="hidden" name="product_img" value="<?= $detail_product['product_img'] ?>">
+                <input type="hidden" name="product_price" value="<?= $detail_product['price'] ?>">
+                <input type="hidden" name="hidden_quantity" id="hidden_quantity" value="1">
                 <button class="btn btn-warning text-light" type="submit" name="add_cart">
-                   Thêm vào giỏ hàng
+                    Thêm vào giỏ hàng
                 </button>
             </form>
         </div>
@@ -66,24 +68,7 @@ $html_show_product = $show_product->show_product_u($data['more_product']);
 <?php include('footer_user.php') ?>
 
 
-
-<script src="script.js"></script>
-<script src="scj.js"></script>
-<script>
-    function changeQuantity(amount) {
-        let quantity = document.getElementById("quantity");
-        let currentQuantity = parseInt(quantity.value);
-        if (currentQuantity + amount > 0) {
-            quantity.value = currentQuantity + amount;
-        }
-    }
-
-    function buyProduct() {
-        let quantity = document.getElementById("quantity").value;
-        alert("Bạn đã thêm " + quantity + " sản phẩm vào giỏ hàng!");
-    }
-
-</script>
+<script src="Public/js/view.js"></script>
 </body>
 
 </html>
