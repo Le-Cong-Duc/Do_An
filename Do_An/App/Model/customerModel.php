@@ -55,7 +55,9 @@ class customerModel
     function show_customer($list_customer)
     {
         $html_list_customer = '';
+        $total_customer = 0;
         foreach ($list_customer as $customer) {
+            $total_customer +=1;
             $html_list_customer .=
                 '<tr>
             <td>' . $customer['customer_id'] . '</td>
@@ -71,7 +73,7 @@ class customerModel
                     class="btn btn-danger">Xóa</a> </td>
         </tr>';
         }
-        return $html_list_customer;
+        return ['html_list_customer' => $html_list_customer, 'total_customer' => $total_customer];
     }
 
 

@@ -3,10 +3,13 @@
 <?php
 $customer = new customerModel;
 
-$html_customer = $customer->show_customer($data['list_customer']);
+$data = $customer->show_customer($data['list_customer']);
+$html_customer = $data['html_list_customer'];
+$html_total = $data['total_customer'];
 ?>
 
 <section id="container">
+    <label><?=$html_total?> khách hàng</label>
     <table class="table">
         <tr>
             <th>ID</th>

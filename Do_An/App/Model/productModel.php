@@ -75,8 +75,10 @@ class productModel
         $html_list_product = '';
         $status = '';
         $i = 1;
+        $total_product = 0;
 
         foreach ($list_product as $product) {
+            $total_product += 1;
             if ($product['status'] == 1) {
                 $status = 'Còn';
             } else {
@@ -94,7 +96,8 @@ class productModel
             </tr>';
             $i++;
         }
-        return $html_list_product;
+        return ['html_list_product' => $html_list_product, 'total_product' => $total_product];
+
     }
 
     function show_product($list_product)

@@ -6,7 +6,9 @@ $category = new catgoryModel;
 $product = new productModel;
 
 $html_category = $category->show_nav_category_a($data['list_category']);
-$html_product = $product->show_product_a($data['list_product']);
+$product = $product->show_product_a($data['list_product']);
+$html_product = $product['html_list_product'];
+$total_product = $product['total_product'];
 $category_id = $data['category']['category_id'];
 $product_name = $data['product']['product_name'];
 ?>
@@ -32,6 +34,8 @@ $product_name = $data['product']['product_name'];
 
     <div class="section_right">
 
+        <label><?=$total_product?> sản phẩm</label>
+        
         <form action="index.php?action=search_a" method="post" class="mb-3 d-flex search">
             <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success me-2" name="btn_search" type="submit">
