@@ -11,7 +11,8 @@ $html_show_product = $show_product->show_product($data['list_product']);
     <div>
         <form class="mb-3 input-group" action="index.php?action=search" method="post" enctype="multipart/form-data"
             style="width: 50%; transform: translateX(50%);">
-            <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search" autocomplete="off">
+            <input class="form-control me-2" name="txt_search" id="search" type="search" placeholder="Tìm kiếm"
+                aria-label="Search" autocomplete="off">
             <button class="btn btn-outline-success me-2" name="btn_search" type="submit">
                 <i class="ti-search"></i>
             </button>

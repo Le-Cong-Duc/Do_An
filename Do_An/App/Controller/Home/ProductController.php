@@ -43,7 +43,6 @@ class ProductController extends BaseController
 
 
         $this->titePage = 'Detail Product';
-        // $this->titePage = $get_detail_product['product_name'];
 
         $this->data['detail_product'] = $get_detail_product;
 
@@ -63,6 +62,8 @@ class ProductController extends BaseController
         $this->titePage = 'Search';
         $this->View('search', $this->titePage, $this->data);
     }
+
+
 }
 
 ?>
