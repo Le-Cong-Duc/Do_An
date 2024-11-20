@@ -32,6 +32,11 @@ class productModel
         return $this->db->get_all($sql);
     }
 
+    function get_product_page($category_id,$offset)
+    {
+        $sql = 'SELECT * FROM product Where category_id = ' . $category_id . ' LIMIT  4 OFFSET ' . $offset;
+        return $this->db->get_all($sql);
+    }
     function get_one_product($product_id)
     {
         $sql = 'SELECT * FROM product WHERE product_id =' . $product_id;

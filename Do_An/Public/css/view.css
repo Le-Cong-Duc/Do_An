@@ -365,6 +365,29 @@
     font-weight: 400;
 }
 
+#product .phantrang {
+    float: left;
+    width: 100%;
+    margin: 50px 0;
+}
+
+#product .phantrang a {
+    width: 60px;
+    padding: 10px;
+    background-color: #ccc;
+    text-decoration: none;
+    font-size: 20px;
+    color: #255;
+}
+
+#product .phantrang a:hover {
+    background-color: #333;
+}
+
+#product .act {
+    background-color: #088178;
+}
+
 @media (max-width:799px) {
     #product .pro-container {
         justify-content: center;
