@@ -111,7 +111,6 @@ $html_more_4 = ' <a href="index.php?action=product&category_id=4" class="pro">
 <?php include('footer.php') ?>
 
 <script>
-    var category_id = <?= isset($category['category_id']) ? $category['category_id'] : 0 ?>;
     var html_page_1_1 = <?= json_encode($html_page_1_1) ?>;
     var html_page_1_2 = <?= json_encode($html_page_1_2) ?>;
     var html_page_1_3 = <?= json_encode($html_more_1) ?>;

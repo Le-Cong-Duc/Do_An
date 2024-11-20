@@ -36,9 +36,6 @@ $html_page_3 = $show_product->show_product($data['page_3']);
 
 </section>
 
-<div id="test">
-
-</div>
 
 <section id="banner">
     <img src="<?= $category['category_banner'] ?>" alt="" width="100%">
