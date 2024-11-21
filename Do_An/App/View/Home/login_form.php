@@ -44,6 +44,7 @@
         </div>
     </form>
 
+
     <form class="form-box register-form" action="index.php?action=register" method="post" enctype="multipart/form-data">
         <div class="form-title">
             <span>Register</span>

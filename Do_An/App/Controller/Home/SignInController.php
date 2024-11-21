@@ -35,7 +35,7 @@ class SignInController
     function regis()
     {
         include("App/View/Home/login_form.php");
-        
+
         if (isset($_POST['dangki'])) {
             $name = $_POST['regis_name'];
             $user = $_POST['regis_user'];

@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <section id="nav">
     <a href="#" class="logo">D&D</a>
 
