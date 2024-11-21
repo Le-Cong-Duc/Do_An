@@ -1,4 +1,4 @@
-<?php include('App/View/Home/navbar.php') ?>
+<?php include('App/View/Home/navbar.php'); ?>
 <link rel="stylesheet" href="Public/themify-icons/themify-icons.css">
 <title> Dang nhap </title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -6,9 +6,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+<script src="Public/js/jquery-3.7.1.js"></script>
+
 <link rel="stylesheet" href="Public/css/signIn.css">
 <link rel="stylesheet" href="Public/css/View.css">
 <link rel="stylesheet" href="Public/css/View.css">
+
 
 <div class="container">
 
@@ -85,9 +88,7 @@
         </div>
     </form>
 
-</div>
 
-<script src="Public/js/signIn.js"></script>
-</body>
+    </body>
 
-</html>
+    </html>

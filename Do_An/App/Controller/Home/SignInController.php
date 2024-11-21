@@ -17,7 +17,7 @@ class SignInController
 
             $result = $this->sign->sign_in($username, $password);
 
-            if ($password = $result['password']) {
+            if ($password === $result['password']) {
                 $_SESSION['user_id'] = $result['customer_id'];
                 $_SESSION['username'] = $result['username'];
 
@@ -49,5 +49,6 @@ class SignInController
             header('location: /Do_an/index.php?action=sign_in');
         }
     }
+
 }
 ?>

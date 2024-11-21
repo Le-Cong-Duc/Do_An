@@ -82,6 +82,7 @@ if (isset($_GET['action'])) {
         case 'sign_in':
             $sign = new SignInController;
             $sign->sign();
+            // $sign->ajax_sign_in();
             break;
         case 'register':
             $sign = new SignInController;
