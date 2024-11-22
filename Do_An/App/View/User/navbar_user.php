@@ -39,9 +39,10 @@ foreach ($list_category as $category) {
                 </form>
             </li>
             <li>
-                Chào mừng ,
-                <?= $_SESSION['username'] ?>
-                <a href="index.php?action=sign_in">Dang xuat</a>
+                <a href="index.php?action=user_detail" class="text-primary">
+                    <?= $_SESSION['username'] ?>
+                </a>
+                <a href="index.php?action=sign_in" class="btn btn-danger text-light" >Dang xuat</a>
             </li>
         </ul>
 

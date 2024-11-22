@@ -116,15 +116,16 @@ class CartController_U extends BaseController_U
         }
     }
 
-    function bill_cart()
+    function user()
     {
         $this->titePage = 'Sản phẩm đã mua';
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
             $this->data['list_bill'] = $this->cart->get_all_bill_by_id($user_id);
+            $this->data['list_customer'] = $this->customer->get_one_customer($user_id);
         }
 
-        $this->View('bill_user', $this->titePage, $this->data);
+        $this->View('user', $this->titePage, $this->data);
     }
 
 }

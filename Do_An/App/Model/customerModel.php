@@ -22,7 +22,7 @@ class customerModel
 
     function get_one_customer($customer_id)
     {
-        $sql = 'SELECT * FROM customer WHERE customer_id = ' . $customer_id . ' ORDER BY customer_id';
+        $sql = 'SELECT * FROM customer WHERE customer_id = ' . $customer_id;
 
         return $this->db->get_one($sql);
     }
@@ -52,12 +52,13 @@ class customerModel
 
         return $this->db->exec($sql);
     }
+
     function show_customer($list_customer)
     {
         $html_list_customer = '';
         $total_customer = 0;
         foreach ($list_customer as $customer) {
-            $total_customer +=1;
+            $total_customer += 1;
             $html_list_customer .=
                 '<tr>
             <td>' . $customer['customer_id'] . '</td>
