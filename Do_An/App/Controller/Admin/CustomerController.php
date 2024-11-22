@@ -28,16 +28,16 @@ class CustomerController extends BaseController_A
 
     function insert_customer()
     {
-        if (isset($_POST['insert'])) {
-            $customer_name = $_POST['name'];
-            $customer_phone = $_POST['phone'];
-            $customer_address = $_POST['address'];
-            $customer_email = $_POST['email'];
-            $customer_user = $_POST['user'];
-            $customer_pass = $_POST['pass'];
+        print('ok');
+        $customer_name = $_POST['name'];
+        $customer_phone = $_POST['phone'];
+        $customer_address = $_POST['address'];
+        $customer_email = $_POST['email'];
+        $customer_user = $_POST['user'];
+        $customer_pass = $_POST['pass'];
 
-            $this->customer->insert_customer($customer_name, $customer_email, $customer_phone, $customer_address, $customer_user, $customer_pass);
-        }
+        $this->customer->insert_customer($customer_name, $customer_email, $customer_phone, $customer_address, $customer_user, $customer_pass);
+
         $this->customer();
     }
 

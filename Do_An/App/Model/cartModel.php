@@ -119,17 +119,20 @@ class cartModel
                 <td>' . $bill['payment_method'] . '</td>
                 
                 <td>
-                <a href="index.php?action=delete_bill&bill_id= ' . $bill['bill_id'] . ' "
-                        class="btn btn-danger">Xóa</a> 
+                     <a href="index.php?action=delete_bill&bill_id= ' . $bill['bill_id'] . ' "
+                        class="btn btn-danger">Xóa
+                    </a> 
                 </td>
                 <td>
-                <a href="index.php?action=update_bill&bill_id= ' . $bill['bill_id'] . '"
-                class="btn btn-success">Duyệt</a> 
+                    <a href="index.php?action=update_bill&bill_id= ' . $bill['bill_id'] . '"
+                        class="btn btn-success">Duyệt
+                    </a>
                 </td>
             </tr>';
         }
         return $html_list_bill;
     }
+
 
     function show_bill_u($list_bill)
     {
@@ -148,6 +151,4 @@ class cartModel
     }
 
 }
-
-
 ?>

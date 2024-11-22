@@ -11,7 +11,7 @@ class CustomerController_U extends BaseController_U
 
     function user()
     {
-        $this->titePage = 'Sản phẩm đã mua';
+        $this->titePage = 'User';
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
             $this->data['list_bill'] = $this->cart->get_all_bill_by_id($user_id);
@@ -24,7 +24,6 @@ class CustomerController_U extends BaseController_U
     function update_user()
     {
         if (isset($_POST['customer_id'])) {
-
             $customer_id = $_POST['customer_id'];
             $customer_name = $_POST['customer_name'];
             $customer_phone = $_POST['customer_phone'];
