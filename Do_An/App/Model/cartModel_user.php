@@ -95,7 +95,7 @@ class cartModel_U
         return ['html_cart' => $html_cart, 'total_bill' => $total_bill];
     }
 
-    function show_bill($list_bill)
+    function show_bill_a($list_bill)
     {
         $html_list_bill = '';
         foreach ($list_bill as $bill) {

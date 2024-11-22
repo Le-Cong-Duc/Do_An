@@ -3,7 +3,7 @@
 <?php
 $cart = new cartModel_U;
 
-$html_bill = $cart->show_bill($data['list_bill']);
+$html_bill = $cart->show_bill_a($data['list_bill']);
 ?>
 
 <section id="container">
