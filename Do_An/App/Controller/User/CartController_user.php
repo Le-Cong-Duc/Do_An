@@ -6,7 +6,7 @@ class CartController_U extends BaseController_U
     private $customer;
     function __construct()
     {
-        $this->cart = new cartModel_U;
+        $this->cart = new cartModel;
         $this->product = new productModel;
         $this->customer = new customerModel;
     }

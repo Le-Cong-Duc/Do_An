@@ -9,7 +9,7 @@ require_once "App/Model/databaseModel.php";
 
 require_once "App/Model/productModel.php";
 require_once "App/Model/categoryModel.php";
-require_once "App/Model/cartModel_user.php";
+require_once "App/Model/cartModel.php";
 require_once "App/Model/customerModel.php";
 require_once "App/Model/SignInModel.php";
 

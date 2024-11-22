@@ -50,7 +50,7 @@ class CustomerController extends BaseController_A
 
             $this->View('update_customer_form', $this->titePage, $this->data);
         }
-        if(isset($_POST['customer_id'])){
+        if (isset($_POST['customer_id'])) {
             $customer_id = $_POST['customer_id'];
             $customer_name = $_POST['name'];
             $customer_phone = $_POST['phone'];
@@ -59,7 +59,7 @@ class CustomerController extends BaseController_A
             $customer_user = $_POST['user'];
             $customer_pass = $_POST['pass'];
 
-            $this->customer->update_customer($customer_id,$customer_name,$customer_email,$customer_phone,$customer_address,$customer_user,$customer_pass);
+            $this->customer->update_customer($customer_id, $customer_name, $customer_email, $customer_phone, $customer_address, $customer_user, $customer_pass);
             $this->customer();
         }
     }

@@ -6,7 +6,7 @@ class CustomerController_U extends BaseController_U
     function __construct()
     {
         $this->customer = new customerModel;
-        $this->cart = new cartModel_U;
+        $this->cart = new cartModel;
     }
 
     function user()
@@ -24,6 +24,7 @@ class CustomerController_U extends BaseController_U
     function update_user()
     {
         if (isset($_POST['customer_id'])) {
+
             $customer_id = $_POST['customer_id'];
             $customer_name = $_POST['customer_name'];
             $customer_phone = $_POST['customer_phone'];
@@ -31,9 +32,8 @@ class CustomerController_U extends BaseController_U
             $customer_email = $_POST['customer_email'];
             $customer_user = $_POST['username'];
             $customer_pass = $_POST['password'];
-
+            
             $this->customer->update_customer($customer_id, $customer_name, $customer_email, $customer_phone, $customer_address, $customer_user, $customer_pass);
-            echo '<script> alert("Thay đổi thông tin thành công !!!!"); </script>';
             $this->user();
         }
 

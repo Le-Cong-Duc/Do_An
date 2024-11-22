@@ -5,7 +5,7 @@ class BillController extends BaseController_A
 
     function __construct()
     {
-        $this->cart = new cartModel_U;
+        $this->cart = new cartModel;
     }
 
     function bill()

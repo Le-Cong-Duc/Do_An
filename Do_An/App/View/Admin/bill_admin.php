@@ -1,7 +1,7 @@
 <?php require("header_admin.php") ?>
 <?php require("navbar_admin.php") ?>
 <?php
-$cart = new cartModel_U;
+$cart = new cartModel;
 
 $html_bill = $cart->show_bill_a($data['list_bill']);
 ?>

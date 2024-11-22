@@ -1,5 +1,5 @@
 <?php
-class cartModel_U
+class cartModel
 {
     private $db;
 

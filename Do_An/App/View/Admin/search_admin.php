@@ -48,7 +48,7 @@ $html_product = $product->show_product_a($data['list_product_name']);
                 <th colspan="2"></th>
             </tr>
             <tr>
-                <?= $html_product; ?>
+                <?= $html_product['html_list_product'] ?>
             </tr>
         </table>
 
