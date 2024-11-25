@@ -11,7 +11,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* background-image: url('../img/slider/b2.png'); */
     display: flex;
     align-items: center;
     justify-content: center;

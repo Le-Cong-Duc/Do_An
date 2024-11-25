@@ -74,7 +74,7 @@ class catgoryModel
         $html_list_category = '';
         foreach ($list_category as $category) {
             $html_list_category .=
-                '<li> <a href="index.php?action=product_a&category_id=' . $category['category_id'] . '">' . $category['category_name'] . '</a></li>';
+                '<a href="index.php?action=product_a&category_id=' . $category['category_id'] . '">' . $category['category_name'] . '</a>';
         }
         return $html_list_category;
     }
@@ -84,7 +84,7 @@ class catgoryModel
         $html_list_category = '';
         foreach ($list_category as $category) {
             $html_list_category .=
-                '<a href="index.php?action=product&category_id=' . $category['category_id'] . '">
+                '<a href="#' . $category['category_id'] . '">
                 <div class="card">
                     <img src="' . $category['category_img'] . '">
                     <div class="card-body">
@@ -105,7 +105,7 @@ class catgoryModel
         $html_list_category = '';
         foreach ($list_category as $category) {
             $html_list_category .=
-                '<a href="index.php?action=product_u&category_id=' . $category['category_id'] . '">
+                '<a href="#' . $category['category_id'] . '">
                 <div class="card">
                     <img src="' . $category['category_img'] . '">
                     <div class="card-body">

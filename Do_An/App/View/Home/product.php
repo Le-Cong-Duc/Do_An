@@ -26,7 +26,7 @@ $category = $data['list_category_id'];
 </section>
 
 
-<section id="banner">
+<section class="banner">
     <img src="<?= $category['category_banner'] ?>" alt="" width="100%">
 </section>
 

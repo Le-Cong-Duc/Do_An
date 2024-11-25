@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="Public/css/View.css">
 
 
-
-<section class="product" style="margin-top: 200px;">
-    <a href="index.php?action=sign_in">Dang Nhap</a>
+<section class="product" >
+    <hr>
+    <div class="login_cart"><a href="index.php?action=sign_in"> Đăng nhập để mua hàng</a></div>
+    <hr>
 </section>
 
 <?php include('footer.php') ?>

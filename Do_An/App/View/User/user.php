@@ -11,6 +11,7 @@ $customer = $data['list_customer'];
     <div id="main">
         <div class="section_left">
 
+        <h1 style="margin-bottom: 50px; margin-top: 15px;">Thông tin cá nhân</h1>
             <form class="mb-3 form-control" id="form_update">
 
                 <div class="mb-3 input-group">
@@ -58,6 +59,7 @@ $customer = $data['list_customer'];
         </div>
 
         <div class="section_right">
+        <h1 style="margin-bottom: 50px;">Sản phẩm đã mua</h1>
             <table>
                 <tr>
                     <th>Sản phẩm</th>

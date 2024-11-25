@@ -6,7 +6,7 @@ $cart = new cartModel;
 $html_bill = $cart->show_bill_a($data['list_bill']);
 ?>
 
-<section id="container">
+<section id="main">
     <form action="index.php?action=search_bill" method="post" class="mb-3 d-flex search">
         <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search">
         <button class="btn btn-outline-success me-2" name="btn_search" type="submit">

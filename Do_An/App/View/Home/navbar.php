@@ -22,8 +22,8 @@ foreach ($list_category as $category) {
     <label class=" " for="menu-nav"><i class="ti-menu"></i></label>
     <nav class="navbar">
         <ul>
-            <li> <a href="index.php">Trang Chủ</a></li>
-            <li> <a href="#">Sản Phẩm</a>
+            <li> <a href="index.php">Trang Chủ  </a></li>
+            <li> <a href="#">Sản Phẩm </a>
                 <ul>
                     <?=$html_list_category?>
                 </ul>
@@ -31,9 +31,9 @@ foreach ($list_category as $category) {
             <li> <a href="index.php?action=cart"><i class="shop-icon ti-shopping-cart"></i></a></li>
             <li>
                 <form action="index.php?action=search" method="post" class="d-flex search">
-                    <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                    <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search" required>
                     <button class="btn btn-outline-success me-2" name="btn_search" type="submit">
-                        <i class="ti-search"></i>
+                        <i class="ti-search"></i> 
                     </button>
                 </form>
             </li>

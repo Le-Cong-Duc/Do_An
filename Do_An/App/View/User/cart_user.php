@@ -19,15 +19,14 @@ $total_bill = $data['total_bill'];
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Tổng</th>
-            <th>Chọn</th>
-            <th>Thao tác</th>
+            <th>Xóa</th>
+            <th>Mua</th>
         </tr>
-
         <?= $html_cart; ?>
 
     </table>
     <div id="main">
-        <div class="section_left">
+        <div class="section_left" style="width: 40%;">
             <a href="index?action=delete_all_cart_u" class="btn btn-danger">Xóa giỏ hàng</a>
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
         </div>

@@ -23,19 +23,16 @@ $product_name = $data['product']['product_name'];
             </ul>
         </nav>
     </div>
-    <div class="section_middle">
-        <nav class="navbar">
-            <ul>
-                <li>Loại sản phẩm</li>
-                <?= $html_category; ?>
-            </ul>
-        </nav>
-    </div>
 
     <div class="section_right">
 
-        <label><?=$total_product?> sản phẩm</label>
-        
+        <label><?= $total_product ?> sản phẩm</label>
+        <hr>
+        <div class="list_cate">
+            <?= $html_category; ?>
+        </div>
+        <hr>
+
         <form action="index.php?action=search_a" method="post" class="mb-3 d-flex search">
             <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success me-2" name="btn_search" type="submit">
@@ -43,7 +40,7 @@ $product_name = $data['product']['product_name'];
             </button>
         </form>
 
-        <table class="table">
+        <table class="table table-primary">
             <tr>
                 <th>STT</th>
                 <th>Product Name</th>

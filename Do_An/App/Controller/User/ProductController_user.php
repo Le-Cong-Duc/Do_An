@@ -21,6 +21,7 @@ class ProductController_U extends BaseController_U
         $quantity = 20;
 
         $this->data['list_product'] = $this->product->get_all_product($category, $quantity);
+        
         $this->data['list_category_id'] = $this->category->get_one_category($category);
 
         $this->titePage = 'Product User';
