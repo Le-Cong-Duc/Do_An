@@ -28,7 +28,6 @@ class CustomerController extends BaseController_A
 
     function insert_customer()
     {
-        print('ok');
         $customer_name = $_POST['name'];
         $customer_phone = $_POST['phone'];
         $customer_address = $_POST['address'];

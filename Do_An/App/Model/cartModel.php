@@ -11,7 +11,7 @@ class cartModel
 
     function get_all_bill()
     {
-        $sql = 'SELECT * FROM bill';
+        $sql = 'SELECT * FROM bill ORDER BY status';
         return $this->db->get_all($sql);
     }
 
@@ -149,6 +149,4 @@ class cartModel
         }
         return $html_list_bill;
     }
-
 }
-?>
