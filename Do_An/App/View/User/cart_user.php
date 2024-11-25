@@ -12,6 +12,7 @@ $total_bill = $data['total_bill'];
     <h1>
         <?= $titlePage; ?>
     </h1>
+    
     <table>
         <tr>
             <th>Sản phẩm</th>
@@ -26,7 +27,7 @@ $total_bill = $data['total_bill'];
 
     </table>
     <div id="main">
-        <div class="section_left" style="width: 40%;">
+        <div style="width: 40%;">
             <a href="index?action=delete_all_cart_u" class="btn btn-danger">Xóa giỏ hàng</a>
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
         </div>

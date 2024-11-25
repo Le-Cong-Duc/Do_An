@@ -13,18 +13,9 @@ $category_id = $data['category']['category_id'];
 $product_name = $data['product']['product_name'];
 ?>
 
-<section id="main">
+<section id="container_a">
 
-    <div class="section_left">
-        <nav class="navbar">
-            <ul>
-                <li> <a href="index.php?action=category_a">Quản Lí Danh Mục</a></li>
-                <li> <a href="index.php?action=product_a">Quản Lí Sản Phẩm</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="section_right">
+    <div class="section_middle">
 
         <label><?= $total_product ?> sản phẩm</label>
         <hr>

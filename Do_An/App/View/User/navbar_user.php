@@ -32,17 +32,17 @@ foreach ($list_category as $category) {
             <li>
                 <form action="index.php?action=search_u" method="post" class="d-flex search">
                     <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm"
-                        aria-label="Search">
+                        aria-label="Search" required>
                     <button class="btn btn-outline-success me-2" name="btn_search" type="submit">
                         <i class="ti-search"></i>
                     </button>
                 </form>
             </li>
             <li>
-                <a href="index.php?action=user_detail" class="text-primary">
-                    <?= $_SESSION['username'] ?>
-                </a>
-                <a href="index.php?action=sign_in" class="btn btn-danger text-light" >Dang xuat</a>
+                <a style="color: blue;" href="index.php?action=user_detail"><?= $_SESSION['username'] ?><i class="ti-user"></i></a>
+            </li>
+            <li>
+                <a href="index.php?action=sign_in"><i class="ti-share" style="font-weight: bolder;"></i></a>
             </li>
         </ul>
 

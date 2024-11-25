@@ -10,27 +10,16 @@ $html_product = $product->show_product_a($data['list_product_name']);
 
 ?>
 
-<section id="main">
+<section id="container_a">
 
-    <div class="section_left">
-        <nav class="navbar">
-            <ul>
-                <li> <a href="index.php?action=category_a">Quản Lí Danh Mục</a></li>
-                <li> <a href="index.php?action=product_a">Quản Lí Sản Phẩm</a></li>
-            </ul>
-        </nav>
-    </div>
     <div class="section_middle">
-        <nav class="navbar">
-            <ul>
-                <li>Loại sản phẩm</li>
-                <?= $html_category; ?>
-            </ul>
-        </nav>
-    </div>
 
-    <div class="section_right">
-
+        <hr>
+        <div class="list_cate">
+            <?= $html_category; ?>
+        </div>
+        <hr>
+        
         <form action="index.php?action=search_a" method="post" class="mb-3 d-flex search">
             <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success me-2" name="btn_search" type="submit">

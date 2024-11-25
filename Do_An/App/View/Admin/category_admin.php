@@ -5,20 +5,10 @@
 $category = new catgoryModel;
 $html_show_category = $category->show_category_a($data['list_category']);
 ?>
-<section id="main">
+<section id="container_a">
 
-    <div class="section_left">
-        <nav class="navbar">
-            <ul>
-                <li> <a href="index.php?action=category_a">Quản Lí Danh Mục</a></li>
-                <li> <a href="index.php?action=product_a">Quản Lí Sản Phẩm</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="section_right">
-
-        <table class="table">
+    <div class="section_middle">
+        <table class="table table-primary">
             <tr>
                 <th>STT</th>
                 <th>Product Name</th>
@@ -39,6 +29,6 @@ $html_show_category = $category->show_category_a($data['list_category']);
 
         </form>
     </div>
-
     </div>
+
 </section>

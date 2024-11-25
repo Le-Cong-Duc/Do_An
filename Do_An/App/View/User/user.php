@@ -7,11 +7,11 @@ $html_bill = $model->show_bill_u($data['list_bill']);
 $customer = $data['list_customer'];
 ?>
 
-<section id="cart">
-    <div id="main">
+<section id="cart" style="display: flex; margin: 0;">
+    <div id="container_a">
         <div class="section_left">
 
-        <h1 style="margin-bottom: 50px; margin-top: 15px;">Thông tin cá nhân</h1>
+            <h1>Thông tin cá nhân</h1>
             <form class="mb-3 form-control" id="form_update">
 
                 <div class="mb-3 input-group">
@@ -58,8 +58,9 @@ $customer = $data['list_customer'];
             </form>
         </div>
 
-        <div class="section_right">
-        <h1 style="margin-bottom: 50px;">Sản phẩm đã mua</h1>
+
+        <div class="section_right" style="border-left: 0 ;">
+            <h1>Sản phẩm đã mua</h1>
             <table>
                 <tr>
                     <th>Sản phẩm</th>
@@ -78,9 +79,9 @@ $customer = $data['list_customer'];
 </section>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
-        $('#form_update').on('submit', function (e) {
+        $('#form_update').on('submit', function(e) {
             var customer_id = $('#id').val();
             var customer_name = $('#name').val();
             var customer_phone = $('#phone').val();
@@ -102,12 +103,12 @@ $customer = $data['list_customer'];
                     username: username,
                     password: password
                 },
-                success: function (response) {
+                success: function(response) {
                     // console.log(response);
                     alert("Cập nhật thông tin thành công!");
                     window.location.reload();
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error("Error:", error);
                     alert("Có lỗi xảy ra. Vui lòng thử lại.");
                 }

@@ -1,4 +1,3 @@
-
 <section id="nav">
     <a href="#" class="logo">D&D</a>
 
@@ -7,12 +6,15 @@
     <nav class="navbar">
         <ul>
             <li> <a href="index.php?action=admin">Trang chủ</a></li>
-            <li> <a href="index.php?action=category_a">Sản phẩm</a></li>
+            <li> <a href="index.php?action=category_a">Loại Sản phẩm</a></li>
+            <li> <a href="index.php?action=product_a">Sản phẩm</a></li>
             <li> <a href="index.php?action=customer">Khách Hàng</a></li>
             <li> <a href="index.php?action=bill">Đơn hàng</a></li>
             <li>
-                <?= $_SESSION['username'] ?> 
-                <a href="index.php?action=sign_in">Dang xuat</a>
+                <a style="color: blue;"><?= $_SESSION['username'] ?><i class="ti-user"></i></a>
+            </li>
+            <li>
+                <a href="index.php?action=sign_in"><i class="ti-share" style="font-weight: bolder;"></i></a>
             </li>
         </ul>
 
