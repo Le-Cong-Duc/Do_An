@@ -109,7 +109,7 @@ class CartController_U extends BaseController_U
             }
 
             echo $quantity;
-            $this->cart->insert_bill($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
+            $this->cart->insert_order($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
             unset($_SESSION['cart'][$product_id]);
             echo "<script>alert('Đặt hàng thành công!');</script>";
             echo "<script>window.location.href='index.php?action=show_cart_u';</script>";
@@ -121,13 +121,11 @@ class CartController_U extends BaseController_U
         $this->titePage = 'Sản phẩm đã mua';
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
+            $this->data['list_order'] = $this->cart->get_all_order_by_id($user_id);
             $this->data['list_bill'] = $this->cart->get_all_bill_by_id($user_id);
-            $this->data['list_bill_status'] = $this->cart->get_all_bill_by_id($user_id);
             $this->data['list_customer'] = $this->customer->get_one_customer($user_id);
         }
 
         $this->View('user', $this->titePage, $this->data);
     }
-
 }
-?>

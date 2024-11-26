@@ -3,7 +3,7 @@
 
 <?php
 $list_bill = $data['list_bill'];
-$list_bill_2 = $data['list_bill_status'];
+$list_order = $data['list_order'];
 $customer = $data['list_customer'];
 ?>
 
@@ -69,7 +69,7 @@ $customer = $data['list_customer'];
                     <th>Tổng</th>
                 </tr>
 
-                <?php foreach ($list_bill as $bill) : ?>
+                <?php foreach ($list_order as $bill) : ?>
 
                     <tr>
                         <td> <img src="<?= $bill['product_img'] ?>" width=150px> </td>
@@ -81,6 +81,7 @@ $customer = $data['list_customer'];
                 <?php endforeach; ?>
 
             </table>
+            <a href="index?action=show_cart_u" class="btn btn-warning">Giỏ hàng</a>
 
             <h1>Sản phẩm đã mua</h1>
             <table>
@@ -91,20 +92,19 @@ $customer = $data['list_customer'];
                     <th>Tổng</th>
                 </tr>
 
-                <?php foreach ($list_bill_2 as $bill) : ?>
+                <?php foreach ($list_bill as $bill) : ?>
 
                     <tr>
                         <td> <img src="<?= $bill['product_img'] ?>" width=150px> </td>
                         <td><?= $bill['product_name'] ?> </td>
                         <td><?= $bill['quantity'] ?></td>
-                        <td><?= $bill['total_bill'] ?></td>
+                        <td><?= $bill['total'] ?></td>
                     </tr>
 
                 <?php endforeach; ?>
 
             </table>
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
-            <a href="index?action=show_cart_u" class="btn btn-warning">Giỏ hàng</a>
         </div>
     </div>
 </section>
