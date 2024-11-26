@@ -13,6 +13,7 @@ body{
     background-attachment: fixed;
     display: flex;
     align-items: center;
+    /* background: url('Public/img/login.jpg'); */
     justify-content: center;
     min-height: 100vh;
     padding: 0 20px;

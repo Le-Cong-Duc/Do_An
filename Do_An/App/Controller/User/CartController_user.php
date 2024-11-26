@@ -122,6 +122,7 @@ class CartController_U extends BaseController_U
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
             $this->data['list_bill'] = $this->cart->get_all_bill_by_id($user_id);
+            $this->data['list_bill_status'] = $this->cart->get_bill_by_status($user_id);
             $this->data['list_customer'] = $this->customer->get_one_customer($user_id);
         }
 

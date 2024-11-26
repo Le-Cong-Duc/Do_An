@@ -4,6 +4,7 @@
 <?php
 $model = new cartModel;
 $html_bill = $model->show_bill_u($data['list_bill']);
+$html_bill_2 = $model->show_bill_u($data['list_bill_status']);
 $customer = $data['list_customer'];
 ?>
 
@@ -60,6 +61,19 @@ $customer = $data['list_customer'];
 
 
         <div class="section_right" style="border-left: 0 ;">
+            <h1>Sản phẩm đang chờ duyệt</h1>
+            <table>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Tổng</th>
+                </tr>
+
+                <?= $html_bill_2; ?>
+
+            </table>
+
             <h1>Sản phẩm đã mua</h1>
             <table>
                 <tr>

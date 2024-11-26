@@ -29,6 +29,13 @@ class cartModel
         return $this->db->get_all($sql);
     }
 
+    function get_bill_by_status($customer_id)
+    {
+        $sql = 'SELECT * FROM bill WHERE customer_id = ' . $customer_id . '& status = "Chưa duyệt" ';
+
+        return $this->db->get_all($sql);
+    }
+
     function delete_bill($bill_id)
     {
         $sql = 'DELETE FROM bill WHERE bill_id = ' . $bill_id;
