@@ -7,6 +7,7 @@ $detail_product = $data['detail_product'];
 $show_product = new productModel;
 
 $html_show_product = $show_product->show_product_u($data['more_product']);
+$html_show_product_2 = $show_product->show_product_u($data['add_more']);
 ?>
 
 <div id="detail_product">
@@ -60,15 +61,40 @@ $html_show_product = $show_product->show_product_u($data['more_product']);
         <div class="pro-container">
             <?= $html_show_product ?>
         </div>
-        <button id="load-more">Xem thêm</button>
+        <div class="phantrang">
+            <a href="#xemthem" id="load-more">Xem thêm</a>
+            <a style="display: none;" href="#an" id="An">Ẩn bớt</a>
+        </div>
     </section>
 
 </div>
 
 <?php include('footer_user.php') ?>
 
-
 <script src="Public/js/view.js"></script>
 </body>
 
 </html>
+
+<script>
+    var html = <?= json_encode($html_show_product) ?>;
+    var html_more = <?= json_encode($html_show_product_2) ?>;
+
+    $('.phantrang').on('click', 'a', function() {
+
+        var page = $(this).attr('href');
+        var link = page.substring(1, page.length);
+
+        if (link == 'xemthem') {
+            $('.pro-container').html(html_more);
+            $('#load-more').css('display','none');
+            $('#An').css('display','unset');
+        }
+        if (link == 'an') {
+            $('.pro-container').html(html);
+            $('#load-more').css('display','unset');
+            $('#An').css('display','none');
+        }
+
+    });
+</script>

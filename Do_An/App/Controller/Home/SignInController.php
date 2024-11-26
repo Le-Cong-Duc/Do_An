@@ -44,11 +44,10 @@ class SignInController
             $phone = $_POST['regis_phone'];
             $address = $_POST['regis_address'];
 
-            $result = $this->sign->register($name, $email, $phone, $address, $user, $pass);
+            $this->sign->register($name, $email, $phone, $address, $user, $pass);
 
+            echo '<script> alert("Đăng kí thành công");  </script>';
             header('location: /Do_an/index.php?action=sign_in');
         }
     }
-
 }
-?>

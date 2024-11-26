@@ -58,10 +58,11 @@ $customer = $data['list_customer'];
             </form>
         </div>
 
-
         <div class="section_right" style="border-left: 0 ;">
+            <hr>
             <h1>Sản phẩm đang chờ duyệt</h1>
-            <table>
+            <hr>
+            <table class="table">
                 <tr>
                     <th>Sản phẩm</th>
                     <th>Tên sản phẩm</th>
@@ -82,9 +83,10 @@ $customer = $data['list_customer'];
 
             </table>
             <a href="index?action=show_cart_u" class="btn btn-warning">Giỏ hàng</a>
-
+            <hr>
             <h1>Sản phẩm đã mua</h1>
-            <table>
+            <hr>
+            <table class="table">
                 <tr>
                     <th>Sản phẩm</th>
                     <th>Tên sản phẩm</th>

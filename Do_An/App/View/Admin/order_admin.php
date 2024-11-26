@@ -70,9 +70,6 @@ $list_order = $data['list_order'];
 
                             <input class="btn btn-success" type="submit" value="Duyệt">
                         </form>
-                        <!-- <a href="index.php?action=order_to_bill&bill_id= <?= $order['order_id'] ?>"
-                            class="btn btn-success">Duyệt
-                        </a> -->
                     </td>
                 </tr>
 
@@ -82,4 +79,5 @@ $list_order = $data['list_order'];
     </div>
 </section>
 
-<script src="Public/js/view.js"></script>
+<!-- <script src="Public/js/view.js"></script> -->
+

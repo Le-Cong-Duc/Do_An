@@ -53,5 +53,14 @@ class customerModel
         return $this->db->exec($sql);
     }
 
+    function update_customer_a($customer_id, $customer_name, $customer_email, $customer_phone, $customer_address)
+    {
+
+        $sql = "UPDATE customer
+            SET customer_name ='$customer_name' , customer_email = '$customer_email'
+            , customer_phone = '$customer_phone', customer_adress =  '$customer_address'
+            WHERE customer_id = " . $customer_id;
+
+        return $this->db->exec($sql);
+    }
 }
-?>

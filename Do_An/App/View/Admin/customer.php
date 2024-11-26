@@ -20,8 +20,6 @@ $total_list_customer = 0;
             <th>Customer Email</th>
             <th>Customer Phone</th>
             <th>Customer Address</th>
-            <th>Username</th>
-            <th>Password</th>
             <th colspan="2"></th>
         </tr>
 
@@ -33,8 +31,6 @@ $total_list_customer = 0;
                 <td><?= $customer['customer_email'] ?></td>
                 <td><?= $customer['customer_phone'] ?></td>
                 <td><?= $customer['customer_adress'] ?></td>
-                <td><?= $customer['username'] ?></td>
-                <td><?= $customer['password'] ?></td>
                 <td> <a href="index.php?action=update_customer&customer_id= <?= $customer['customer_id'] ?> "
                         class="btn btn-warning">Sửa</a> </td>
                 <td> <a href="index.php?action=delete_customer&customer_id= <?= $customer['customer_id'] ?> "
@@ -55,10 +51,6 @@ $total_list_customer = 0;
             <input type="text" class="form-control" id="address" placeholder="Customer Address">
         </div>
 
-        <div class="mb-3 input-group">
-            <input type="text" class="form-control" id="user" placeholder="Username" required>
-            <input type="text" class="form-control" id="pass" placeholder="password" required>
-        </div>
         <div class="input-group">
             <input type="submit" class="btn btn-success" name="insert" value="Thêm khách hàng">
         </div>
@@ -73,8 +65,6 @@ $total_list_customer = 0;
             var phone = $('#phone').val();
             var email = $('#email').val();
             var address = $('#address').val();
-            var user = $('#user').val();
-            var pass = $('#pass').val();
             e.preventDefault();
 
             $.ajax({
@@ -84,9 +74,7 @@ $total_list_customer = 0;
                     name: name,
                     phone: phone,
                     email: email,
-                    address: address,
-                    user: user,
-                    pass: pass
+                    address: address
                 },
                 success: function(response) {
                     alert("Thêm khách hàng thành công!");

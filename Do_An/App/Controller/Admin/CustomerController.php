@@ -55,10 +55,9 @@ class CustomerController extends BaseController_A
             $customer_phone = $_POST['phone'];
             $customer_address = $_POST['address'];
             $customer_email = $_POST['email'];
-            $customer_user = $_POST['user'];
-            $customer_pass = $_POST['pass'];
 
-            $this->customer->update_customer($customer_id, $customer_name, $customer_email, $customer_phone, $customer_address, $customer_user, $customer_pass);
+
+            $this->customer->update_customer_a($customer_id, $customer_name, $customer_email, $customer_phone, $customer_address);
             $this->customer();
         }
     }

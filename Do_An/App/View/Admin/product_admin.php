@@ -85,5 +85,6 @@ $status = '';
                 <input type="submit" class="btn btn-success" name="insert" value="Thêm Sản phẩm">
             </div>
         </form>
+
     </div>
 </section>
