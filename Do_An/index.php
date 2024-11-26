@@ -162,19 +162,19 @@ if (isset($_GET['action'])) {
             break;
         case 'bill':
             $bill = new BillController;
-            $bill->bill();
+            $bill->order();
             break;
-        case 'delete_bill':
+        case 'delete_order':
             $bill = new BillController;
-            $bill->delet_bill();
+            $bill->delete_order_bill();
             break;
-        case 'update_bill':
+        case 'order_to_bill':
             $bill = new BillController;
-            $bill->update_bill();
+            $bill->order_to_bill();
             break;
-        case 'search_bill':
+        case 'search_order':
             $bill = new BillController;
-            $bill->search_bill();
+            $bill->search_order();
             break;
         default:
             break;

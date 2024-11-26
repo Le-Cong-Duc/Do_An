@@ -2,7 +2,7 @@
 <?php require("navbar_admin.php") ?>
 <?php
 
-$list_bill = $data['list_bill'];
+$list_order = $data['list_order'];
 ?>
 
 <section id="container">
@@ -26,7 +26,7 @@ $list_bill = $data['list_bill'];
             <th>Payment method</th>
             <th colspan="2"></th>
         </tr>
-        <?php foreach ($list_bill as $bill) : ?>
+        <?php foreach ($list_order as $bill) : ?>
             <?php if ($bill['payment_method'] == 1) {
                 $bill['payment_method'] = 'Thanh toán khi nhận hàng';
             } else {
@@ -46,12 +46,12 @@ $list_bill = $data['list_bill'];
                 <td><?= $bill['payment_method'] ?></td>
 
                 <td>
-                    <a href="index.php?action=delete_bill&bill_id= <?= $bill['bill_id'] ?> "
+                    <a href="index.php?action=delete_order&order_id= <?= $bill['order_id'] ?> "
                         class="btn btn-danger">Xóa
                     </a>
                 </td>
                 <td>
-                    <a href="index.php?action=update_bill&bill_id= <?= $bill['bill_id'] ?>"
+                    <a href="index.php?action=order_to_bill&order_id= <?= $bill['order_id'] ?>"
                         class="btn btn-success">Duyệt
                     </a>
                 </td>

@@ -44,6 +44,7 @@ class cartModel
     function delete_order_bill($order_id)
     {
         $sql = 'DELETE FROM order_bill WHERE order_id = ' . $order_id;
+        
         return $this->db->exec($sql);
     }
 

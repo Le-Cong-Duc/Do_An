@@ -8,49 +8,56 @@ class BillController extends BaseController_A
         $this->cart = new cartModel;
     }
 
-    function bill()
+    function order()
     {
 
-        $this->titePage = 'Bill admin';
-        
-        $this->data['list_bill'] = $this->cart->get_all_bill();
+        $this->titePage = 'order bill admin';
 
-        $this->View('bill_admin', $this->titePage, $this->data);
+        $this->data['list_order'] = $this->cart->get_all_order();
+
+        $this->View('order_admin', $this->titePage, $this->data);
     }
 
-    function delet_bill()
+    function delete_order_bill()
     {
-        if (isset($_GET['bill_id'])) {
-            $bill_id = $_GET['bill_id'];
+        if (isset($_GET['order_id'])) {
+            $order_id = $_GET['order_id'];
         }
-        $this->cart->delete_bill($bill_id);
-        $this->bill();
+        $this->cart->delete_order_bill($order_id);
+        $this->order();
     }
 
-    function update_bill()
+    function order_to_bill()
     {
-        if (isset($_GET['bill_id'])) {
-            $bill_id = $_GET['bill_id'];
-            $status = 'đã duyệt';
+        if (isset($_POST['order_id'])) {
+            $order_id = $_POST['order_id'];
+            $customer_id = $_POST['customer_id'];
+            $product_id = $_POST['product_id'];
+            $product_name = $_POST['product_name'];
+            $product_img = $_POST['product_img'];
+            $customer_name = $_POST['customer_name'];
+            $customer_email = $_POST['customer_email'];
+            $customer_address = $_POST['customer_address'];
+            $customer_phone = $_POST['customer_phone'];
+            $quantity = $_POST['quantity'];
+            $total = $_POST['total_bill'];
 
-            $this->cart->update_bill($bill_id, $status);
-            $this->bill();
+            $this->cart->insert_bill($customer_id, $product_id, $product_name, $product_img,  $customer_name, $customer_email, $customer_phone, $customer_address,     $quantity, $total);
+            $this->cart->delete_order_bill($order_id);
+            $this->order();
         }
     }
 
-    function search_bill()
+    function search_order()
     {
         if (isset($_POST['btn_search'])) {
             $customer_name = $_POST['txt_search'];
         }
 
-        $this->data['list_bill'] = $this->cart->get_all_bill_by_name($customer_name);
+        $this->data['list_order'] = $this->cart->get_all_order_by_name($customer_name);
 
-        $this->titePage = 'Search Bill';
+        $this->titePage = 'Search Order';
 
-        $this->View('search_bill', $this->titePage, $this->data);
+        $this->View('search_order', $this->titePage, $this->data);
     }
-
 }
-
-?>
