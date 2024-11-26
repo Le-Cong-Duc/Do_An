@@ -75,35 +75,6 @@ class productModel
         return $this->db->exec($sql);
     }
 
-    function show_product_a($list_product)
-    {
-        $html_list_product = '';
-        $status = '';
-        $i = 1;
-        $total_product = 0;
-
-        foreach ($list_product as $product) {
-            $total_product += 1;
-            if ($product['status'] == 1) {
-                $status = 'Còn';
-            } else {
-                $status = 'Hết hàng';
-            }
-            $html_list_product .= '
-            <tr>
-                <td>' . $i . '</td>
-                <td>' . $product['product_name'] . '</td>
-                <td> <img src = "' . $product['product_img'] . '"></td>
-                <td>' . $product['price'] . '.000 VNĐ</td>
-                <td>' . $status . '</td>
-                <td> <a href ="index.php?action=update_product&product_id= ' . $product['product_id'] . ' " class ="btn btn-warning" >Sửa</a>  </td>
-                <td> <a href ="index.php?action=delete_product&product_id= ' . $product['product_id'] . ' " class="btn btn-danger">Xóa</a>  </td>
-            </tr>';
-            $i++;
-        }
-        return ['html_list_product' => $html_list_product, 'total_product' => $total_product];
-
-    }
 
     function show_product($list_product)
     {

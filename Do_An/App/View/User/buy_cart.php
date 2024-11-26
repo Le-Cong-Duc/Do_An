@@ -29,7 +29,6 @@ $customer = $data['customer'];
             <input type="text" class="form-control" name="customer_address" value="<?= $customer['customer_adress'] ?>">
         </div>
 
-
         <div class="mb-3 input-group">
             <label style="width: 20%;" class="form-label">Product name:</label>
             <input type="text" class="form-control" name="product_name" value="<?= $product['product_name'] ?>">

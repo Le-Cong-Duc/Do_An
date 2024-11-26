@@ -2,26 +2,34 @@
 <?php require("navbar_admin.php") ?>
 
 <?php
-$category = new catgoryModel;
-$product = new productModel;
+$list_category = $data['list_category'];
+$list_product = $data['list_product'];
 
-$html_category = $category->show_nav_category_a($data['list_category']);
-$product = $product->show_product_a($data['list_product']);
-$html_product = $product['html_list_product'];
-$total_product = $product['total_product'];
 $category_id = $data['category']['category_id'];
 $product_name = $data['product']['product_name'];
+
+$total_list_product = 0;
+$i = 1;
+$status = '';
 ?>
 
 <section id="container_a">
 
     <div class="section_middle">
 
-        <label><?= $total_product ?> sản phẩm</label>
+        <?php foreach ($list_product as $pro) {
+            $total_list_product += 1;
+        } ?>
+
+        <label><?= $total_list_product ?> sản phẩm</label>
+        
         <hr>
         <div class="list_cate">
-            <?= $html_category; ?>
+            <?php foreach ($list_category as $category) : ?>
+                <a href="index.php?action=product_a&category_id=<?= $category['category_id'] ?>"><?= $category['category_name'] ?></a>
+            <?php endforeach; ?>
         </div>
+
         <hr>
 
         <form action="index.php?action=search_a" method="post" class="mb-3 d-flex search">
@@ -41,9 +49,29 @@ $product_name = $data['product']['product_name'];
                 <th colspan="2"></th>
             </tr>
             <tr>
-                <?= $html_product; ?>
+                <?php foreach ($list_product as $pro) :
+                    $total_list_product += 1;
+                    if ($pro['status'] == 1) {
+                        $status = 'Còn';
+                    } else {
+                        $status = 'Hết hàng';
+                    }
+                ?>
+            <tr>
+                <td><?= $i ?></td>
+                <td><?= $pro['product_name'] ?></td>
+                <td> <img src="<?= $pro['product_img'] ?>"></td>
+                <td><?= $pro['price'] ?>.000 VNĐ</td>
+                <td><?= $status ?> </td>
+                <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning">Sửa</a> </td>
+                <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger">Xóa</a> </td>
             </tr>
+
+        <?php $i++;
+                endforeach; ?>
+        </tr>
         </table>
+
         <form class="mb-3" action="index.php?action=insert_product&category_id=<?= $category_id ?>" method="post"
             enctype="multipart/form-data">
             <h4 class="text-primary" style="text-align: left; margin-left: 20px;">Thêm sản phẩm</h4>

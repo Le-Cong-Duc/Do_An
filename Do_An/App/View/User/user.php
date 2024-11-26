@@ -2,9 +2,8 @@
 <?php include('navbar_user.php') ?>
 
 <?php
-$model = new cartModel;
-$html_bill = $model->show_bill_u($data['list_bill']);
-$html_bill_2 = $model->show_bill_u($data['list_bill_status']);
+$list_bill = $data['list_bill'];
+$list_bill_2 = $data['list_bill_status'];
 $customer = $data['list_customer'];
 ?>
 
@@ -70,7 +69,16 @@ $customer = $data['list_customer'];
                     <th>Tổng</th>
                 </tr>
 
-                <?= $html_bill_2; ?>
+                <?php foreach ($list_bill as $bill) : ?>
+
+                    <tr>
+                        <td> <img src="<?= $bill['product_img'] ?>" width=150px> </td>
+                        <td><?= $bill['product_name'] ?> </td>
+                        <td><?= $bill['quantity'] ?></td>
+                        <td><?= $bill['total_bill'] ?></td>
+                    </tr>
+
+                <?php endforeach; ?>
 
             </table>
 
@@ -83,7 +91,16 @@ $customer = $data['list_customer'];
                     <th>Tổng</th>
                 </tr>
 
-                <?= $html_bill; ?>
+                <?php foreach ($list_bill_2 as $bill) : ?>
+
+                    <tr>
+                        <td> <img src="<?= $bill['product_img'] ?>" width=150px> </td>
+                        <td><?= $bill['product_name'] ?> </td>
+                        <td><?= $bill['quantity'] ?></td>
+                        <td><?= $bill['total_bill'] ?></td>
+                    </tr>
+
+                <?php endforeach; ?>
 
             </table>
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>

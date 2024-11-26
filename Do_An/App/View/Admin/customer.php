@@ -1,16 +1,17 @@
 <?php require("header_admin.php") ?>
 <?php require("navbar_admin.php") ?>
 <?php
-$customer = new customerModel;
-
-$data = $customer->show_customer($data['list_customer']);
-$html_customer = $data['html_list_customer'];
-$html_total = $data['total_customer'];
+$list_customer = $data['list_customer'];
+$total_list_customer = 0;
 ?>
 
 <section id="container">
+    <?php foreach ($list_customer as $customer) :
+        $total_list_customer += 1; ?>
+    <?php endforeach; ?>
+
     <label>
-        <?= $html_total ?> khách hàng
+        <?= $total_list_customer ?> khách hàng
     </label>
     <table class="table">
         <tr>
@@ -23,7 +24,23 @@ $html_total = $data['total_customer'];
             <th>Password</th>
             <th colspan="2"></th>
         </tr>
-        <?= $html_customer; ?>
+
+
+        <?php foreach ($list_customer as $customer) : ?>
+            <tr>
+                <td><?= $customer['customer_id'] ?></td>
+                <td><?= $customer['customer_name'] ?></td>
+                <td><?= $customer['customer_email'] ?></td>
+                <td><?= $customer['customer_phone'] ?></td>
+                <td><?= $customer['customer_adress'] ?></td>
+                <td><?= $customer['username'] ?></td>
+                <td><?= $customer['password'] ?></td>
+                <td> <a href="index.php?action=update_customer&customer_id= <?= $customer['customer_id'] ?> "
+                        class="btn btn-warning">Sửa</a> </td>
+                <td> <a href="index.php?action=delete_customer&customer_id= <?= $customer['customer_id'] ?> "
+                        class="btn btn-danger">Xóa</a> </td>
+            </tr>
+        <?php endforeach; ?>
     </table>
 
     <form class="mb-3" id="form_insert" enctype="multipart/form-data">
@@ -48,10 +65,10 @@ $html_total = $data['total_customer'];
 
     </form>
 </section>
-<!-- action="index.php?action=insert_customer" method="post" -->
+
 <script>
-    $(document).ready(function () {
-        $('#form_insert').on('submit', function (e) {
+    $(document).ready(function() {
+        $('#form_insert').on('submit', function(e) {
             var name = $('#name').val();
             var phone = $('#phone').val();
             var email = $('#email').val();
@@ -71,11 +88,11 @@ $html_total = $data['total_customer'];
                     user: user,
                     pass: pass
                 },
-                success: function (response) {
+                success: function(response) {
                     alert("Thêm khách hàng thành công!");
                     window.location.reload();
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error("Error:", error);
                     alert("Có lỗi xảy ra. Vui lòng thử lại.");
                 }

@@ -53,30 +53,5 @@ class customerModel
         return $this->db->exec($sql);
     }
 
-    function show_customer($list_customer)
-    {
-        $html_list_customer = '';
-        $total_customer = 0;
-        foreach ($list_customer as $customer) {
-            $total_customer += 1;
-            $html_list_customer .=
-                '<tr>
-            <td>' . $customer['customer_id'] . '</td>
-            <td>' . $customer['customer_name'] . '</td>
-            <td>' . $customer['customer_email'] . '</td>
-            <td>' . $customer['customer_phone'] . '</td>
-            <td>' . $customer['customer_adress'] . '</td>
-            <td>' . $customer['username'] . '</td>
-            <td>' . $customer['password'] . '</td>
-            <td> <a href="index.php?action=update_customer&customer_id= ' . $customer['customer_id'] . ' "
-                    class="btn btn-warning">Sửa</a> </td>
-            <td> <a href="index.php?action=delete_customer&customer_id= ' . $customer['customer_id'] . ' "
-                    class="btn btn-danger">Xóa</a> </td>
-        </tr>';
-        }
-        return ['html_list_customer' => $html_list_customer, 'total_customer' => $total_customer];
-    }
-
-
 }
 ?>

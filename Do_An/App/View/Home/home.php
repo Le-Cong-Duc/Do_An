@@ -2,11 +2,9 @@
 <?php include('navbar.php') ?>
 
 <?php
-$show_category = new catgoryModel;
-$html_list_category = $show_category->show_category($data['list_category']);
+$list_category = $data['list_category'];
 
 $show_product = new productModel;
-
 $html_list_product_1 = $show_product->show_product($data['list_product_1']);
 $html_list_product_2 = $show_product->show_product($data['list_product_2']);
 $html_list_product_3 = $show_product->show_product($data['list_product_3']);
@@ -36,7 +34,21 @@ $html_page_4_2 = $show_product->show_product($data['page_4_2']);
 
 
     <section id="category">
-        <?= $html_list_category; ?>
+
+        <?php foreach ($list_category as $category) : ?>
+            <a href="#<?= $category['category_id'] ?>">
+                <div class="card">
+                    <img src="<?= $category['category_img'] ?>">
+                    <div class="card-body">
+                        <h5 class="card-title">ĐẶC SẢN ĐÀ NẴNG </h5>
+                        <p class="card-text">
+                            <?= $category['category_name'] ?>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        <?php endforeach; ?>
+
     </section>
 
     <section id="product">

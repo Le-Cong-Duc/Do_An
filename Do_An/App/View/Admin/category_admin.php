@@ -2,8 +2,7 @@
 <?php require("navbar_admin.php") ?>
 
 <?php
-$category = new catgoryModel;
-$html_show_category = $category->show_category_a($data['list_category']);
+$list_category =  $data['list_category'];
 ?>
 <section id="container_a">
 
@@ -15,7 +14,17 @@ $html_show_category = $category->show_category_a($data['list_category']);
                 <th>Product Img</th>
                 <th colspan="2"></th>
             </tr>
-            <?= $html_show_category ?>
+
+            <?php foreach ($list_category as $category) : ?>
+                <tr>
+                    <td><?= $category['category_id'] ?></td>
+                    <td><?= $category['category_name'] ?></td>
+                    <td><img src="<?= $category['category_img'] ?>"> </td>
+                    <td> <a href="index.php?action=update_category&category_id= <?= $category['category_id'] ?> " class="btn btn-warning">Sửa</a> </td>
+                    <td> <a href="index.php?action=delete_category&category_id= <?= $category['category_id'] ?> " class="btn btn-danger">Xóa</a> </td>
+                </tr>
+            <?php endforeach; ?>
+
         </table>
         <form class="mb-3" action="index.php?action=insert_category" method="post" enctype="multipart/form-data">
 
