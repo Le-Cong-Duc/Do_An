@@ -31,6 +31,7 @@ $list_bill = $data['list_bill'];
                 <th colspan="2"></th>
             </tr>
 
+            <!-- list bill  -->
             <?php foreach ($list_bill as $bill) : ?>
                 <?php if ($bill['payment_method'] == 1) {
                     $bill['payment_method'] = 'Thanh toán khi nhận hàng';

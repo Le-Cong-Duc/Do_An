@@ -22,7 +22,7 @@ $status = '';
         } ?>
 
         <label><?= $total_list_product ?> sản phẩm</label>
-        
+
         <hr>
         <div class="list_cate">
             <?php foreach ($list_category as $category) : ?>
@@ -48,28 +48,28 @@ $status = '';
                 <th>Status</th>
                 <th colspan="2"></th>
             </tr>
-            <tr>
-                <?php foreach ($list_product as $pro) :
-                    $total_list_product += 1;
-                    if ($pro['status'] == 1) {
-                        $status = 'Còn';
-                    } else {
-                        $status = 'Hết hàng';
-                    }
-                ?>
-            <tr>
-                <td><?= $i ?></td>
-                <td><?= $pro['product_name'] ?></td>
-                <td> <img src="<?= $pro['product_img'] ?>"></td>
-                <td><?= $pro['price'] ?>.000 VNĐ</td>
-                <td><?= $status ?> </td>
-                <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning">Sửa</a> </td>
-                <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger">Xóa</a> </td>
-            </tr>
 
-        <?php $i++;
-                endforeach; ?>
-        </tr>
+            <?php foreach ($list_product as $pro) :
+                $total_list_product += 1;
+                if ($pro['status'] == 1) {
+                    $status = 'Còn';
+                } else {
+                    $status = 'Hết hàng';
+                }
+            ?>
+                <tr>
+                    <td><?= $i ?></td>
+                    <td><?= $pro['product_name'] ?></td>
+                    <td> <img src="<?= $pro['product_img'] ?>"></td>
+                    <td><?= $pro['price'] ?>.000 VNĐ</td>
+                    <td><?= $status ?> </td>
+                    <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning">Sửa</a> </td>
+                    <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger">Xóa</a> </td>
+                </tr>
+
+            <?php $i++;
+            endforeach; ?>
+
         </table>
 
         <form class="mb-3" action="index.php?action=insert_product&category_id=<?= $category_id ?>" method="post"

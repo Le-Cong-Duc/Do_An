@@ -1,9 +1,8 @@
 <?php require("header_admin.php") ?>
 <?php require("navbar_admin.php") ?>
 <?php
-$cart = new cartModel;
 
-$html_bill = $cart->show_bill_a($data['list_bill']);
+$list_bill = $data['list_bill'];
 ?>
 
 <section id="container">
@@ -27,6 +26,37 @@ $html_bill = $cart->show_bill_a($data['list_bill']);
             <th>Payment method</th>
             <th colspan="2"></th>
         </tr>
-        <?= $html_bill; ?>
+        <?php foreach ($list_bill as $bill) : ?>
+            <?php if ($bill['payment_method'] == 1) {
+                $bill['payment_method'] = 'Thanh toán khi nhận hàng';
+            } else {
+                $bill['payment_method'] = 'Thanh toán bằng chuyển khoản';
+            } ?>
+
+            <tr>
+                <td><?= $bill['customer_name'] ?></td>
+                <td><?= $bill['customer_email'] ?></td>
+                <td><?= $bill['customer_phone'] ?></td>
+                <td><?= $bill['customer_address'] ?></td>
+                <td><?= $bill['product_name'] ?></td>
+                <td> <img src="<?= $bill['product_img'] ?>" width=200px> </td>
+                <td><?= $bill['quantity'] ?></td>
+                <td><?= $bill['total_bill'] ?></td>
+                <td><?= $bill['status'] ?></td>
+                <td><?= $bill['payment_method'] ?></td>
+
+                <td>
+                    <a href="index.php?action=delete_bill&bill_id= <?= $bill['bill_id'] ?> "
+                        class="btn btn-danger">Xóa
+                    </a>
+                </td>
+                <td>
+                    <a href="index.php?action=update_bill&bill_id= <?= $bill['bill_id'] ?>"
+                        class="btn btn-success">Duyệt
+                    </a>
+                </td>
+            </tr>
+
+        <?php endforeach; ?>
     </table>
 </section>
