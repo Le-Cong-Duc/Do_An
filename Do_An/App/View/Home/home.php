@@ -19,6 +19,9 @@ $html_page_3_2 = $show_product->show_product($data['page_3_2']);
 $html_page_4_1 = $show_product->show_product($data['page_4_1']);
 $html_page_4_2 = $show_product->show_product($data['page_4_2']);
 
+$html_most_product = $show_product->show_product($data['most_product']);
+$html_most_product_2 = $show_product->show_product($data['most_product_2']);
+
 ?>
 
 <div id="container">
@@ -52,6 +55,17 @@ $html_page_4_2 = $show_product->show_product($data['page_4_2']);
     </section>
 
     <section id="product">
+
+        <hr>
+        <h4 style="color: red;">Sản phẩm bán chạy </h4>
+        <hr>
+        <div style="background-color: yellow;" class="pro-container" id="most">
+            <?= $html_most_product; ?>
+        </div>
+        <div class="phantrang">
+            <a href="#most_1">1</a>
+            <a href="#most_2">2</a>
+        </div>
 
         <hr>
         <h4 id="1">Đặc sản bánh kẹo </h4>
@@ -145,6 +159,8 @@ $html_page_4_2 = $show_product->show_product($data['page_4_2']);
     var html_page_3_2 = <?= json_encode($html_page_3_2) ?>;
     var html_page_4_1 = <?= json_encode($html_page_4_1) ?>;
     var html_page_4_2 = <?= json_encode($html_page_4_2) ?>;
+    var most_1 = <?= json_encode($html_most_product) ?>;
+    var most_2 = <?= json_encode($html_most_product_2) ?>;
 
 
     $('.phantrang').on('click', 'a', function() {
@@ -168,6 +184,10 @@ $html_page_4_2 = $show_product->show_product($data['page_4_2']);
             $('#product_4').html(html_page_4_1);
         } else if (link == '4_2') {
             $('#product_4').html(html_page_4_2);
+        } else if (link == 'most_1') {
+            $('#most').html(most_1);
+        } else if (link == 'most_2') {
+            $('#most').html(most_2);
         }
 
     });

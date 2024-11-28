@@ -43,6 +43,15 @@ class productModel
         return $this->db->get_one($sql);
     }
 
+    function get_most_product($limit,$offset)
+    {
+        $sql = 'SELECT bill.product_id, product.product_name, product.product_img, product.evaluate, product.price, SUM(bill.quantity) as quanity 
+        FROM bill INNER JOIN product on product.product_id = bill.product_id 
+        GROUP BY bill.product_id ORDER BY SUM(bill.quantity) 
+        DESC LIMIT ' . $limit . ' OFFSET '.$offset;
+        return $this->db->get_all($sql);
+    }
+
     function delete_product($product_id)
     {
         $sql = 'DELETE FROM product WHERE product_id = ' . $product_id;
@@ -190,6 +199,4 @@ class productModel
 
         return $html_list_product;
     }
-
 }
-?>

@@ -28,9 +28,10 @@ class HomeController extends BaseController
         $this->data['page_4_1'] = $this->product->get_product_page(4, 0);
         $this->data['page_4_2'] = $this->product->get_product_page(4, 4);
 
+        $this->data['most_product'] = $this->product->get_most_product(4, 0);
+        $this->data['most_product_2'] = $this->product->get_most_product(4, 4);
+
         $this->titePage = 'Da Nang Gorment';
         $this->View('home', $this->titePage, $this->data);
     }
 }
-
-?>

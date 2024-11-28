@@ -28,10 +28,11 @@ class HomeController_U extends BaseController_U
         $this->data['page_4_1'] = $this->product->get_product_page(4, 0);
         $this->data['page_4_2'] = $this->product->get_product_page(4, 4);
 
+        $this->data['most_product'] = $this->product->get_most_product(4, 0);
+        $this->data['most_product_2'] = $this->product->get_most_product(4, 4);
+
         $this->titePage = 'Home User';
 
         $this->View('home_user', $this->titePage, $this->data);
     }
 }
-
-?>
