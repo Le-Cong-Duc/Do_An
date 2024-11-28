@@ -183,4 +183,3 @@ if (isset($_GET['action'])) {
     $homepage = new HomeController;
     $homepage->index();
 }
-?>
