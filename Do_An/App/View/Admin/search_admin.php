@@ -7,7 +7,7 @@ $product = new productModel;
 
 $list_category = $data['list_category'];
 $list_product = $data['list_product_name'];
-
+$i = 1;
 ?>
 
 <section id="container_a">
@@ -40,7 +40,6 @@ $list_product = $data['list_product_name'];
             </tr>
 
             <?php foreach ($list_product as $pro) :
-                $total_list_product += 1;
                 if ($pro['status'] == 1) {
                     $status = 'Còn';
                 } else {
@@ -64,4 +63,3 @@ $list_product = $data['list_product_name'];
 
     </div>
 </section>
-

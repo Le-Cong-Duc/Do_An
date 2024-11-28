@@ -44,10 +44,12 @@ class ProductController extends BaseController
         $this->data['detail_product'] = $get_detail_product;
 
         $more_product = $this->product->get_all_product($get_detail_product['category_id'], 4);
+        $add_more = $this->product->get_all_product($get_detail_product['category_id'], 8);
+
         $this->data['more_product'] = $more_product;
+        $this->data['add_more'] = $add_more;
 
         $this->View('detail_product', $this->titePage, $this->data);
-
     }
 
     function search()
@@ -59,8 +61,4 @@ class ProductController extends BaseController
         $this->titePage = 'Search';
         $this->View('search', $this->titePage, $this->data);
     }
-
-
 }
-
-?>
