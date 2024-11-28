@@ -844,6 +844,10 @@ footer a:hover {
     text-align: center;
 }
 
+#container_a .section_middle #hidden {
+    display: none;
+}
+
 #container_a .section_right {
     float: left;
     width: 70%;
@@ -852,7 +856,7 @@ footer a:hover {
     border-left: 1px solid #ccc;
 }
 
-#container_a .section_right h1{
+#container_a .section_right h1 {
     color: #6BA3BE;
     font-weight: bolder;
     font-size: 25px;
@@ -918,6 +922,14 @@ footer a:hover {
     #container_a .section_middle {
         width: 100%;
         margin: 0;
+    }
+
+    #container_a .section_middle #hidden{
+        display: unset;
+    }
+
+    #container_a .section_middle #appear{
+        display: none;
     }
 
 }

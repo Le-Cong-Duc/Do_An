@@ -110,7 +110,8 @@ if (isset($_GET['action'])) {
             break;
 
         case 'admin':
-            include("App/View/Admin/home_admin.php");
+            $admin = new HomeController_A;
+            $admin->index();
             break;
         case 'category_a':
             $category_a = new ProductController_A;
