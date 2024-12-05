@@ -109,6 +109,7 @@ class CartController_U extends BaseController_U
             }
 
             echo $quantity;
+            
             $this->cart->insert_order($customer_id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
             unset($_SESSION['cart'][$product_id]);
             echo "<script>alert('Đặt hàng thành công!');</script>";

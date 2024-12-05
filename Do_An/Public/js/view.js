@@ -13,4 +13,3 @@ function changeQuantity(change) {
     updateHiddenQuantity();
 }
 document.getElementById('quantity').addEventListener('input', updateHiddenQuantity);
-
