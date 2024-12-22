@@ -77,7 +77,7 @@ if (isset($_GET['action'])) {
             $cart_u->buy_cart();
             break;
         case 'user_detail':
-            $cart_u = new CartController_U;
+            $cart_u = new CustomerController_U;
             $cart_u->user();
             break;
         case 'sign_in':

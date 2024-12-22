@@ -21,9 +21,9 @@ class cartModel
         return $this->db->get_all($sql);
     }
 
-    function get_all_bill_by_id($customer_id)
+    function get_all_bill_by_id($customer_id, $limit)
     {
-        $sql = 'SELECT * FROM bill  WHERE customer_id = ' . $customer_id . ' ';
+        $sql = 'SELECT * FROM bill  WHERE customer_id = ' . $customer_id . ' LIMIT '.$limit;
         return $this->db->get_all($sql);
     }
 
@@ -71,5 +71,4 @@ class cartModel
         VALUE (' . $customer_id . ',' . $product_id . ',"' . $product_name . '","' . $product_img . '","' . $customer_name . '","' . $customer_email . '","' . $customer_phone . '","' . $customer_address . '",' . $quantity . ',' . $total . ')';
         return $this->db->exec($sql);
     }
-
 }

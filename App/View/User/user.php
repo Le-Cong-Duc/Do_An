@@ -137,7 +137,6 @@ $customer = $data['list_customer'];
                     password: password
                 },
                 success: function(response) {
-                    // console.log(response);
                     alert("Cập nhật thông tin thành công!");
                     window.location.reload();
                 },
