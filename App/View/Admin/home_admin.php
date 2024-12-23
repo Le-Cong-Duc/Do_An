@@ -3,13 +3,11 @@
 
 <?php
 $list_bill = $data['list_bill'];
-$more_bill = $data['more_bill'];
 
 $list_product = $data['list_product'];
 $list_customer = $data['list_customer'];
 
 $list_most = $data['most_product'];
-$more_product = $data['more_product'];
 
 $i = 0;
 $ii = 0;
