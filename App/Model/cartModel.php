@@ -15,15 +15,20 @@ class cartModel
         return $this->db->get_all($sql);
     }
 
-    function get_all_bill()
+    // function get_all_bill()
+    // {
+    //     $sql = 'SELECT * FROM bill';
+    //     return $this->db->get_all($sql);
+    // }
+    function get_all_bill($limit)
     {
-        $sql = 'SELECT * FROM bill';
+        $sql = 'SELECT * FROM bill LIMIT ' . $limit;
         return $this->db->get_all($sql);
     }
 
     function get_all_bill_by_id($customer_id, $limit)
     {
-        $sql = 'SELECT * FROM bill  WHERE customer_id = ' . $customer_id . ' LIMIT '.$limit;
+        $sql = 'SELECT * FROM bill  WHERE customer_id = ' . $customer_id . ' LIMIT ' . $limit;
         return $this->db->get_all($sql);
     }
 

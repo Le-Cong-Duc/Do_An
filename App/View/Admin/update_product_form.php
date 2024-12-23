@@ -13,13 +13,13 @@
 <section id="container">
     <form class="mb-3" action="index.php?action=update_product" method="post" enctype="multipart/form-data">
 
-        <h1 class="text-success">Update form    </h1>
+        <h1 class="text-success mb-4">Update form    </h1>
         <div class="mb-3 input-group">
             <label style="margin-right: 20px;" class="form-label">Category Name</label>
             <input type="text" class="form-control" name="name" value="<?= $data['product_name'] ?>">
         </div>
         <img src="<?= $data['product_img'] ?>" alt="image" style="width: 300px;">
-        <div class="mb-3 input-group">
+        <div class="mb-3 mt-3 input-group">
             <label style="margin-right: 30px;" class="form-label">Category Img:</label>
             <input type="file" class="form-control" name="image">
         </div>
@@ -35,6 +35,6 @@
         </div>
 
         <input type="hidden" name="product_id" value="<?= $data['product_id'] ?>">
-        <input type="submit" class="btn btn-success" value="Cập nhật" name="update">
+        <input type="submit" class="btn btn-success btn-gradient-green" value="Cập nhật" name="update">
     </form>
 </section>

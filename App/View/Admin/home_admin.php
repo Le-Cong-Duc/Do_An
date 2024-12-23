@@ -3,10 +3,13 @@
 
 <?php
 $list_bill = $data['list_bill'];
+$more_bill = $data['more_bill'];
+
 $list_product = $data['list_product'];
 $list_customer = $data['list_customer'];
 
 $list_most = $data['most_product'];
+$more_product = $data['more_product'];
 
 $i = 0;
 $ii = 0;
@@ -30,39 +33,39 @@ $total_bill = 0;
         }
         ?>
 
-        <div class="container text-center mb-3">
+        <div class="container text-center pb-4 border-bottom">
             <div class="row align-items-center">
 
                 <div class="col" id="appear">
-                    <div class="btn btn-success">Tổng số doanh thu<br> <?= number_format($total_bill) . '.000 VNĐ' ?></div>
+                    <div class="btn btn-success btn-gradient-green">Tổng số doanh thu<br> <?= number_format($total_bill) . '.000 VNĐ' ?></div>
                 </div>
                 <div class="col" id="appear">
-                    <a href="index.php?action=product_a" class="btn btn-primary">Sản phẩm hiện có<br> <?= $product_count . ' sản phẩm' ?></a>
+                    <a href="index.php?action=product_a" class="btn btn-primary btn-gradient-blue">Sản phẩm hiện có<br> <?= $product_count . ' sản phẩm' ?></a>
                 </div>
                 <div class="col" id="appear">
-                    <a href="index.php?action=customer" class="btn btn-warning">Tổng số khách hàng<br> <?= $customer_count . ' khách hàng' ?></a>
+                    <a href="index.php?action=customer" class="btn btn-warning btn-gradient-yellow">Tổng số khách hàng<br> <?= $customer_count . ' khách hàng' ?></a>
                 </div>
 
                 <div class="col" id="hidden">
                     <div class="btn btn-success">Doanh thu: <br> <?= $total_bill . '.000 VNĐ' ?></div>
                 </div>
                 <div class="col" id="hidden">
-                    <a href="" class="btn btn-primary">Sản phẩm <br> <?= $product_count . ' sản phẩm' ?></a>
+                    <a href="index.php?action=product_a" class="btn btn-primary">Sản phẩm <br> <?= $product_count . ' sản phẩm' ?></a>
                 </div>
                 <div class="col" id="hidden">
-                    <a href="" class="btn btn-warning">Khách hàng <br> <?= $customer_count . ' khách hàng' ?></a>
+                    <a href="index.php?action=customer" class="btn btn-warning">Khách hàng <br> <?= $customer_count . ' khách hàng' ?></a>
                 </div>
             </div>
         </div>
 
-        <hr>
 
-        <div class="container text-center">
+
+        <div class="container text-center pt-4">
             <div class="row">
                 <div class="col">
-                    <h4>Sản phẩm đã bán ra</h4>
+                    <h4 class="fw-semibold mb-4">Sản phẩm đã bán ra</h4>
 
-                    <table class="table table-primary">
+                    <table class="table table-primary table-gradient-blue " id="list_bill">
                         <tr>
                             <th>STT</th>
                             <th>Product Name</th>
@@ -77,20 +80,25 @@ $total_bill = 0;
                             <tr>
                                 <td><?= $i ?></td>
                                 <td><?= $bill['product_name'] ?></td>
-                                <td> <img src="<?= $bill['product_img'] ?>" width=200px> </td>
+                                <td> <img src="<?= $bill['product_img'] ?>"> </td>
                                 <td><?= $bill['quantity'] ?></td>
                                 <td><?= number_format($bill['total']) . '.000 VNĐ' ?></td>
                             </tr>
 
                         <?php endforeach; ?>
                     </table>
+                    <div class="phantrang">
+                        <a href="#xemThem" id="load-more">Xem Them</a>
+                        <a style="display: none;" href="#an" id="An">Ẩn bớt</a>
+                    </div>
+
 
                 </div>
 
                 <div class="col">
-                    <h4>Sản phẩm bán chạy</h4>
+                    <h4 class="fw-semibold mb-4">Sản phẩm bán chạy</h4>
 
-                    <table class="table table-warning">
+                    <table class="table table-warning table-gradient-yellow">
                         <tr>
                             <th>STT</th>
                             <th>Product Name</th>

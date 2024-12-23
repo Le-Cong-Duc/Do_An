@@ -1,0 +1,64 @@
+#container_a .section_middle img {
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+}
+
+table tr th, table tr td {
+  vertical-align: middle;
+  padding: 12px !important;
+}
+
+table tr th {
+  font-style: italic;
+  font-weight: 700;
+}
+
+table tr td {
+  font-weight: 600;
+}
+
+table td, table th {
+  background: none !important;
+}
+
+table.table-gradient-blue tr{
+  background: linear-gradient(135deg, #cfe2ff, #d1c4ff) !important;
+}
+
+table.table-gradient-yellow tr{
+  background: linear-gradient(135deg, #fff3cd, #ffd28a) !important;
+}
+
+table.table-gradient-white tr{
+  background: linear-gradient(135deg, #efefef, #d6d6d6)  !important;
+}
+
+form.search button {
+  line-height: 0;
+}
+
+.btn-gradient-green {
+  background: linear-gradient(135deg, #188754, #0c5c37);
+}
+
+.btn-gradient-blue {
+  background: linear-gradient(135deg, #0b6ff9, #083e99);
+}
+
+.btn-gradient-yellow {
+  background: linear-gradient(135deg, #fec107, #d49a02);
+}
+
+.btn-gradient-red {
+  background: linear-gradient(135deg, #df334c, #a32238);
+}
+
+.btn-gradient-blue, .btn-gradient-green, .btn-gradient-yellow, .btn-gradient-red {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.btn-gradient-blue:hover, .btn-gradient-green:hover, .btn-gradient-yellow:hover {
+ opacity: .9;
+}

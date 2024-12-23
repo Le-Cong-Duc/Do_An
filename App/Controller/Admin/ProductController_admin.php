@@ -37,6 +37,8 @@ class ProductController_A extends BaseController_A
             move_uploaded_file($_FILES['image']['tmp_name'], $category_img);
 
             $this->category->insert_category($category_name, $img);
+            echo '<script> alert("Them thanh cong") </script>';
+
         }
         $this->category();
     }
@@ -63,6 +65,7 @@ class ProductController_A extends BaseController_A
             $category_name = $_POST['name'];
 
             $this->category->update_category($category_id, $category_name, $img);
+            echo '<script> alert("Cap nhat thanh cong") </script>';
             $this->category();
         }
     }
@@ -85,7 +88,7 @@ class ProductController_A extends BaseController_A
         } else {
             $product_id = 1;
         }
-        $this->data['product'] = $this->product->get_one_product($product_id);
+        // $this->data['product'] = $this->product->get_one_product($product_id);
         $this->titePage = 'Product Admin';
 
         $this->View('product_admin', $this->titePage, $this->data);
@@ -124,6 +127,7 @@ class ProductController_A extends BaseController_A
             move_uploaded_file($_FILES['image']['tmp_name'], $category_img);
 
             $this->product->insert_product($product_name, $img, $product_price, $product_status, $category_id);
+            echo '<script> alert("Them thanh cong") </script>';
         }
         $this->product();
     }
@@ -156,6 +160,8 @@ class ProductController_A extends BaseController_A
             }
 
             $this->product->update_product($product_id, $product_name, $img, $product_price, $product_status);
+            echo '<script> alert("Cap nhat thanh cong") </script>';
+
             $this->product();
         }
     }

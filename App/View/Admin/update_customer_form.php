@@ -3,7 +3,7 @@
 
 
 <section id="container">
-    <form class="mb-3" action="index.php?action=update_customer" method="post" enctype="multipart/form-data">
+    <form class="mb-3 pt-4" action="index.php?action=update_customer" method="post" enctype="multipart/form-data">
 
         <div class="mb-3 input-group">
             <label style="width: 20%;" class="form-label">Customer Name</label>
@@ -35,7 +35,7 @@
         </div>
         <div class="input-group">
             <input type="hidden" name="customer_id" value="<?= $data['customer_id'] ?>">
-            <input type="submit" class="btn btn-success" name="update" value="Cập nhật">
+            <input type="submit" class="btn btn-success btn-gradient-green" name="update" value="Cập nhật">
         </div>
 
     </form>

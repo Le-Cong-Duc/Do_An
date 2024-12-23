@@ -6,7 +6,7 @@ $list_category = $data['list_category'];
 $list_product = $data['list_product'];
 
 $category_id = $data['category']['category_id'];
-$product_name = $data['product']['product_name'];
+// $product_name = $data['product']['product_name'];
 
 $total_list_product = 0;
 $i = 1;
@@ -21,7 +21,7 @@ $status = '';
             $total_list_product += 1;
         } ?>
 
-        <label><?= $total_list_product ?> sản phẩm</label>
+        <label class="fw-semibold"><?= $total_list_product ?> sản phẩm</label>
 
         <hr>
         <div class="list_cate">
@@ -32,14 +32,14 @@ $status = '';
 
         <hr>
 
-        <form action="index.php?action=search_a" method="post" class="mb-3 d-flex search">
+        <form action="index.php?action=search_a" method="post" class="mb-4 pt-3 d-flex gap-3 search">
             <input class="form-control me-2" name="txt_search" type="search" placeholder="Tìm kiếm" aria-label="Search">
-            <button class="btn btn-outline-success me-2" name="btn_search" type="submit">
+            <button class="btn btn-outline-success" name="btn_search" type="submit">
                 <i class="ti-search"></i>
             </button>
         </form>
 
-        <table class="table table-primary">
+        <table class="table table-primary table-gradient-blue">
             <tr>
                 <th>STT</th>
                 <th>Product Name</th>
@@ -63,8 +63,8 @@ $status = '';
                     <td> <img src="<?= $pro['product_img'] ?>"></td>
                     <td><?= $pro['price'] ?>.000 VNĐ</td>
                     <td><?= $status ?> </td>
-                    <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning">Sửa</a> </td>
-                    <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger">Xóa</a> </td>
+                    <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning btn-gradient-yellow">Sửa</a> </td>
+                    <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger btn-gradient-red">Xóa</a> </td>
                 </tr>
 
             <?php $i++;
@@ -72,17 +72,17 @@ $status = '';
 
         </table>
 
-        <form class="mb-3" action="index.php?action=insert_product&category_id=<?= $category_id ?>" method="post"
+        <form class="my-4" action="index.php?action=insert_product&category_id=<?= $category_id ?>" method="post"
             enctype="multipart/form-data">
-            <h4 class="text-primary" style="text-align: left; margin-left: 20px;">Thêm sản phẩm</h4>
-            <div class="mb-3 input-group">
+            <h4 class="text-primary mb-3" style="text-align: left; margin-left: 20px;">Thêm sản phẩm</h4>
+            <div class="flex gap-3 mb-4 input-group">
                 <input type="text" class="form-control" name="name" placeholder="Name" required>
                 <input type="text" class="form-control" name="price" placeholder="Price">
                 <input type="text" class="form-control" name="status" placeholder="Status">
             </div>
-            <div class="mb-3 input-group">
+            <div class="pb-5 input-group">
                 <input type="file" class="form-control" name="image" placeholder="Image">
-                <input type="submit" class="btn btn-success" name="insert" value="Thêm Sản phẩm">
+                <input type="submit" class="btn btn-success btn-gradient-green" name="insert" value="Thêm Sản phẩm">
             </div>
         </form>
 

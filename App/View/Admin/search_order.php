@@ -13,7 +13,7 @@ $list_order = $data['list_order'];
         </button>
     </form>
 
-    <table class="table">
+    <table class="table table-gradient-yellow">
         <tr>
             <th>Customer Name</th>
             <th>Customer Email</th>
@@ -47,7 +47,7 @@ $list_order = $data['list_order'];
 
                 <td>
                     <a href="index.php?action=delete_order&order_id= <?= $bill['order_id'] ?> "
-                        class="btn btn-danger">Xóa
+                        class="btn btn-danger btn-gradient-red">Xóa
                     </a>
                 </td>
                 <td>
@@ -64,7 +64,7 @@ $list_order = $data['list_order'];
                         <input type="hidden" id="quantity" value="<?= $order['quantity'] ?>">
                         <input type="hidden" id="total_bill" value="<?= $order['total_bill'] ?>">
 
-                        <input class="btn btn-success" type="submit" value="Duyệt">
+                        <input class="btn btn-success btn-gradient-green" type="submit" value="Duyệt">
 
                     </form>
                 </td>

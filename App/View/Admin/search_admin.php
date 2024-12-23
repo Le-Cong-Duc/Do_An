@@ -29,7 +29,7 @@ $i = 1;
             </button>
         </form>
 
-        <table class="table">
+        <table class="table table-gradient-blue">
             <tr>
                 <th>STT</th>
                 <th>Product Name</th>
@@ -52,8 +52,8 @@ $i = 1;
                     <td> <img src="<?= $pro['product_img'] ?>"></td>
                     <td><?= $pro['price'] ?>.000 VNĐ</td>
                     <td><?= $status ?> </td>
-                    <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning">Sửa</a> </td>
-                    <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger">Xóa</a> </td>
+                    <td> <a href="index.php?action=update_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-warning btn-gradient-yellow">Sửa</a> </td>
+                    <td> <a href="index.php?action=delete_product&product_id= <?= $pro['product_id'] ?> " class="btn btn-danger btn-gradient-red">Xóa</a> </td>
                 </tr>
 
             <?php $i++;

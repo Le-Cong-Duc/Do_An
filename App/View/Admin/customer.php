@@ -10,10 +10,10 @@ $total_list_customer = 0;
         $total_list_customer += 1; ?>
     <?php endforeach; ?>
 
-    <label>
+    <label class="fw-semibold mb-3">
         <?= $total_list_customer ?> khách hàng
     </label>
-    <table class="table">
+    <table class="table center mb-5 table-gradient-white">
         <tr>
             <th>ID</th>
             <th>Customer Name</th>
@@ -32,21 +32,21 @@ $total_list_customer = 0;
                 <td><?= $customer['customer_phone'] ?></td>
                 <td><?= $customer['customer_adress'] ?></td>
                 <td> <a href="index.php?action=update_customer&customer_id= <?= $customer['customer_id'] ?> "
-                        class="btn btn-warning">Sửa</a> </td>
+                        class="btn btn-warning btn-gradient-yellow">Sửa</a> </td>
                 <td> <a href="index.php?action=delete_customer&customer_id= <?= $customer['customer_id'] ?> "
-                        class="btn btn-danger">Xóa</a> </td>
+                        class="btn btn-danger btn-gradient-red">Xóa</a> </td>
             </tr>
         <?php endforeach; ?>
     </table>
 
     <form class="mb-3" id="form_insert" enctype="multipart/form-data">
 
-        <div class="mb-3 input-group">
+        <div class="mb-3 input-group gap-4">
             <input type="text" class="form-control" id="name" placeholder="Customer Name" required>
             <input type="text" class="form-control" id="phone" placeholder="Numberphone" required>
         </div>
 
-        <div class="mb-3 input-group">
+        <div class="mb-3 input-group gap-4">
             <input type="text" class="form-control" id="email" placeholder="Email">
             <input type="text" class="form-control" id="address" placeholder="Customer Address">
         </div>
