@@ -14,14 +14,12 @@ class HomeController_A extends BaseController_A
 
     function index()
     {
-        $this->data['list_bill'] = $this->cart->get_all_bill(4);
-        $this->data['more_bill'] = $this->cart->get_all_bill(100);
+        $this->data['list_bill'] = $this->cart->get_all_bill(20);
 
         $this->data['list_product'] = $this->product->get_all_product(0, 0);
         $this->data['list_customer'] = $this->customer->get_all_customer();
 
-        $this->data['most_product'] = $this->product->get_most_product(4, 0);
-        $this->data['more_product'] = $this->product->get_most_product(20, 0);
+        $this->data['most_product'] = $this->product->get_most_product(10, 0);
 
         $this->titePage = 'Admin Home';
 

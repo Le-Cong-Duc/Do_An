@@ -78,7 +78,7 @@ $html_most_product_2 = $show_product->show_product_u($data['most_product_2']);
         <div class="phantrang">
             <a href="#1_1">1</a>
             <a href="#1_2">2</a>
-            <a href="index.php?action=product_u&category_id=1">More >>></a>
+            <a href="index.php?action=product_u&category_id=1" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
 
@@ -90,7 +90,7 @@ $html_most_product_2 = $show_product->show_product_u($data['most_product_2']);
         <div class="phantrang">
             <a href="#2_1">1</a>
             <a href="#2_2">2</a>
-            <a href="index.php?action=product_u&category_id=2">More >>></a>
+            <a href="index.php?action=product_u&category_id=2" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
 
@@ -102,7 +102,7 @@ $html_most_product_2 = $show_product->show_product_u($data['most_product_2']);
         <div class="phantrang">
             <a href="#3_1">1</a>
             <a href="#3_2">2</a>
-            <a href="index.php?action=product_u&category_id=3">More >>></a>
+            <a href="index.php?action=product_u&category_id=3" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
 
@@ -115,7 +115,7 @@ $html_most_product_2 = $show_product->show_product_u($data['most_product_2']);
         <div class="phantrang">
             <a href="#4_1">1</a>
             <a href="#4_2">2</a>
-            <a href="index.php?action=product_u&category_id=4">More >>></a>
+            <a href="index.php?action=product_u&category_id=4" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
     </section>

@@ -87,11 +87,6 @@ $total_bill = 0;
 
                         <?php endforeach; ?>
                     </table>
-                    <div class="phantrang">
-                        <a href="#xemThem" id="load-more">Xem Them</a>
-                        <a style="display: none;" href="#an" id="An">Ẩn bớt</a>
-                    </div>
-
 
                 </div>
 
