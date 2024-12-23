@@ -164,10 +164,10 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
 
 
     $('.phantrang').on('click', 'a', function() {
-        $(this).siblings().removeClass('act');
-        $(this).addClass('act');
+
         var page = $(this).attr('href');
         var link = page.substring(1, page.length);
+        
         if (link == '1_1') {
             $('#product_1').html(html_page_1_1);
         } else if (link == '1_2') {
