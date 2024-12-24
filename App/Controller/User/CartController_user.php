@@ -140,13 +140,14 @@ class CartController_U extends BaseController_U
                 $total = $item['price'] * $quantity;
                 $status = 0;
                 $payment = 1;
+
+                $this->cart->insert_all_order($id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
             }
 
-            $this->cart->insert_all_order($id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
 
             unset($_SESSION['cart']);
             echo "<script>alert('Mua tất cả sản phẩm thành công!');</script>";
             echo "<script>window.location.href='index.php?action=show_cart_u';</script>";
-        } 
+        }
     }
 }

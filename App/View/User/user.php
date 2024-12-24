@@ -76,7 +76,7 @@ $customer = $data['list_customer'];
                     } else if ($order['status'] == 1) {
                         $order['status'] = '<div style= "color: red" > Đơn hàng bị hủy </div>';
                     } else if ($order['status'] == 2) {
-                        $order['status'] = 'Đang giao hàng';
+                        $order['status'] = '<div style = "color: green"> Đang giao hàng </div>';
                     } else if ($order['status'] == 3) {
                         $order['status'] = '
                         <form action="index.php?action=order_to_bill" method="post" id = "form_nhanHang">

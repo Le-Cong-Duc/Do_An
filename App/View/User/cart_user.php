@@ -1,6 +1,9 @@
 <?php include('header_user.php') ?>
 <?php include('navbar_user.php') ?>
 
+<?php 
+$total = 0;
+?>
 <section id="cart">
     <h1>
         <?= $titlePage; ?>
@@ -20,7 +23,7 @@
         <?php if (count($_SESSION['cart']) > 0) {
 
             foreach ($_SESSION['cart'] as $cart) {
-                $total = $cart['price'] * $cart['quantity']; ?>
+                $total += $cart['price'] * $cart['quantity']; ?>
 
                 <tr>
                     <td>
@@ -59,6 +62,8 @@
             <a href="index?action=delete_all_cart_u" class="btn btn-danger">Xóa giỏ hàng</a>
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
             <a href="index?action=buy_all_cart_u" class="btn btn-success">Mua tất cả</a>
+            
+            <div style="color: blue; font-weight: bolder;">Tổng tiền: <?=$total?>.000 VNĐ</div>
         </div>
     </div>
 </section>
