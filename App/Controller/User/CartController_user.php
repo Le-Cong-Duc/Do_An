@@ -94,12 +94,13 @@ class CartController_U extends BaseController_U
             $customer_email = $_POST['customer_email'];
             $customer_phone = $_POST['customer_phone'];
             $customer_address = $_POST['customer_address'];
+
             $product_id = $_POST['product_id'];
             $product_name = $_POST['product_name'];
             $product_img = $_POST['product_img'];
             $quantity = $_POST['quantity'];
             $total = $_POST['total'];
-            $status = 'Chưa duyệt';
+            $status = 0;
             $payment = $_POST['payment'];
 
             if ($payment = 'Thanh toán khi nhận hàng') {
@@ -117,4 +118,35 @@ class CartController_U extends BaseController_U
         }
     }
 
+    function buy_all()
+    {
+        if (isset($_SESSION['cart']) && !empty($_SESSION['cart']) && isset($_SESSION['user_id'])) {
+            $customer_id = $_SESSION['user_id'];
+            $customer = $this->customer->get_one_customer($customer_id); // Lấy thông tin khách hàng
+            $cart = $_SESSION['cart'];
+
+            foreach ($cart as $item) {
+
+                $id = $customer['customer_id'];
+                $customer_name = $customer['customer_name'];
+                $customer_email = $customer['customer_email'];
+                $customer_phone = $customer['customer_phone'];
+                $customer_address = $customer['customer_address'];
+
+                $product_id = $item['id'];
+                $product_name = $item['name'];
+                $product_img = $item['img'];
+                $quantity = $item['quantity'];
+                $total = $item['price'] * $quantity;
+                $status = 0;
+                $payment = 1;
+            }
+
+            $this->cart->insert_all_order($id, $product_id, $product_name, $product_img, $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total, $status, $payment);
+
+            unset($_SESSION['cart']);
+            echo "<script>alert('Mua tất cả sản phẩm thành công!');</script>";
+            echo "<script>window.location.href='index.php?action=show_cart_u';</script>";
+        } 
+    }
 }

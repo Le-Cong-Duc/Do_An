@@ -78,6 +78,10 @@ if (isset($_GET['action'])) {
             $cart_u = new CartController_U;
             $cart_u->buy_cart();
             break;
+        case 'buy_all_cart_u':
+            $cart_u = new CartController_U;
+            $cart_u->buy_all();
+            break;
         case 'user_detail':
             $cart_u = new CustomerController_U;
             $cart_u->user();

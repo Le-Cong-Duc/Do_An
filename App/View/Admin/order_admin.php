@@ -98,7 +98,7 @@ $list_order_4 = $data['list_order_4'];
                 if ($order['status'] == 0) {
                     $order['status'] = 'Đang chờ duyệt';
                 } else  if ($order['status'] == 1) {
-                    $order['status'] = '<div style = "color: red"> Đơn hàng bị hủy </div>';
+                    $order['status'] = '<a href="index.php?action=delete_order& order_id='.$order['order_id'].'" class= "text-danger"> Đơn hàng bị hủy </a>';
                 } else if ($order['status'] == 2) {
                     $order['status'] = 'Đã chuyển qua đơn vị vận chuyển';
                 } else if ($order['status'] == 3) {
