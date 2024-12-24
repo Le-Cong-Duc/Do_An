@@ -70,13 +70,39 @@ $customer = $data['list_customer'];
                     <th>Tổng</th>
                 </tr>
 
-                <?php foreach ($list_order as $bill) : ?>
-
+                <?php foreach ($list_order as $order) :
+                    if ($order['status'] == 0) {
+                        $order['status'] = 'Đang chờ duyệt';
+                    } else if ($order['status'] == 1) {
+                        $order['status'] = '<div style= "color: red" > Đơn hàng bị hủy </div>';
+                    } else if ($order['status'] == 2) {
+                        $order['status'] = 'Đang giao hàng';
+                    } else if ($order['status'] == 3) {
+                        $order['status'] = '
+                        <form action="index.php?action=order_to_bill" method="post" id = "form_nhanHang">
+                            <input type="hidden" name="order_id" value="' . $order['order_id'] . '">
+                            <input type="hidden" name="customer_id" value="' . $order['customer_id'] . '">
+                            <input type="hidden" name="product_id" value="' . $order['product_id'] . '">
+                            <input type="hidden" name="product_name" value="' . $order['product_name'] . '">
+                            <input type="hidden" name="product_img" value="' . $order['product_img'] . '">
+                            <input type="hidden" name="customer_name" value="' . $order['customer_name'] . '">
+                            <input type="hidden" name="customer_address" value="' . $order['customer_address'] . '">
+                            <input type="hidden" name="customer_email" value="' . $order['customer_email'] . '">
+                            <input type="hidden" name="customer_phone" value="' . $order['customer_phone'] . '">
+                            <input type="hidden" name="quantity" value="' . $order['quantity'] . '">
+                            <input type="hidden" name="total_bill" value="' . $order['total_bill'] . '">
+                            
+                            <input type="submit" class="btn btn-danger" name="nhanHang" value="Đã nhận hàng">
+                        </form>
+                        ';
+                    }
+                ?>
                     <tr>
-                        <td> <img src="<?= $bill['product_img'] ?>" width=150px> </td>
-                        <td><?= $bill['product_name'] ?> </td>
-                        <td><?= $bill['quantity'] ?></td>
-                        <td><?= $bill['total_bill'] ?></td>
+                        <td> <img src="<?= $order['product_img'] ?>" width=150px> </td>
+                        <td><?= $order['product_name'] ?> </td>
+                        <td><?= $order['quantity'] ?></td>
+                        <td><?= $order['total_bill'] ?></td>
+                        <td style="color: blue; font-weight: 600;"><?= $order['status'] ?></td>
                     </tr>
 
                 <?php endforeach; ?>

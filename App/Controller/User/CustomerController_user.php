@@ -38,4 +38,26 @@ class CustomerController_U extends BaseController_U
             $this->user();
         }
     }
+    
+    function order_to_bill()
+    {
+        if (isset($_POST['order_id'])) {
+            $order_id = $_POST['order_id'];
+            $customer_id = $_POST['customer_id'];
+            $product_id = $_POST['product_id'];
+            $product_name = $_POST['product_name'];
+            $product_img = $_POST['product_img'];
+            $customer_name = $_POST['customer_name'];
+            $customer_email = $_POST['customer_email'];
+            $customer_address = $_POST['customer_address'];
+            $customer_phone = $_POST['customer_phone'];
+            $quantity = $_POST['quantity'];
+            $total = $_POST['total_bill'];
+
+            $this->cart->insert_bill($customer_id, $product_id, $product_name, $product_img,  $customer_name, $customer_email, $customer_phone, $customer_address, $quantity, $total);
+            $this->cart->delete_order_bill($order_id);
+            $this->user();
+        }
+    }
+
 }

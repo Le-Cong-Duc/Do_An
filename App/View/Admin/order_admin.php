@@ -2,6 +2,7 @@
 <?php require("navbar_admin.php") ?>
 <?php
 $list_order = $data['list_order'];
+$list_order_4 = $data['list_order_4'];
 ?>
 
 <section id="container_a">
@@ -17,9 +18,6 @@ $list_order = $data['list_order'];
         <table class="table table-gradient-yellow">
             <tr>
                 <th>Customer Name</th>
-                <!-- <th>Customer Email</th>
-                <th>Customer Phone</th>
-                <th>Customer Address</th> -->
                 <th>Product Name</th>
                 <th>Product Img</th>
                 <th>Quantity</th>
@@ -35,42 +33,87 @@ $list_order = $data['list_order'];
                     $order['payment_method'] = 'Thanh toán khi nhận hàng';
                 } else {
                     $order['payment_method'] = 'Thanh toán bằng chuyển khoản';
-                } ?>
+                }
+
+                if ($order['status'] == 0) {
+                    $order['status'] = 'Đang chờ duyệt';
+                } else  if ($order['status'] == 1) {
+                    $order['status'] = 'Đơn hàng bị hủy';
+                } else if ($order['status'] == 2) {
+                    $order['status'] = 'Đã chuyển qua đơn vị vận chuyển';
+                } else if ($order['status'] == 3) {
+                    $order['status'] = 'Đang chờ người mua xác nhận';
+                }
+                ?>
 
                 <tr>
                     <td><?= $order['customer_name'] ?></td>
-                    <!-- <td><?= $order['customer_email'] ?></td>
-                    <td><?= $order['customer_phone'] ?></td>
-                    <td><?= $order['customer_address'] ?></td> -->
                     <td><?= $order['product_name'] ?></td>
                     <td> <img src="<?= $order['product_img'] ?>" width=200px> </td>
                     <td><?= $order['quantity'] ?></td>
                     <td><?= $order['total_bill'] ?></td>
-                    <td><?= $order['status'] ?></td>
+                    <td style="color: blue;"><?= $order['status'] ?></td>
                     <td><?= $order['payment_method'] ?></td>
 
                     <td>
-                        <a href="index.php?action=delete_order&order_id= <?= $order['order_id'] ?> "
-                            class="btn btn-danger btn-gradient-red">Hủy
-                        </a>
-                    </td>
-                    <td>
-                        <form action="index.php?action=order_to_bill" method="post">
+                        <form action="index.php?action=admin_huy" method="post">
                             <input type="hidden" name="order_id" value="<?= $order['order_id'] ?>">
-                            <input type="hidden" name="customer_id" value="<?= $order['customer_id'] ?>">
-                            <input type="hidden" name="product_id" value="<?= $order['product_id'] ?>">
-                            <input type="hidden" name="product_name" value="<?= $order['product_name'] ?>">
-                            <input type="hidden" name="product_img" value="<?= $order['product_img'] ?>">
-                            <input type="hidden" name="customer_name" value="<?= $order['customer_name'] ?>">
-                            <input type="hidden" name="customer_address" value="<?= $order['customer_address'] ?>">
-                            <input type="hidden" name="customer_email" value="<?= $order['customer_email'] ?>">
-                            <input type="hidden" name="customer_phone" value="<?= $order['customer_phone'] ?>">
-                            <input type="hidden" name="quantity" value="<?= $order['quantity'] ?>">
-                            <input type="hidden" name="total_bill" value="<?= $order['total_bill'] ?>">
+                            <input class="btn btn-danger btn-gradient-red" type="submit" value="Hủy đơn">
+                        </form>
+                    </td>
 
+                    <td>
+                        <form action="index.php?action=admin_duyet" method="post">
+                            <input type="hidden" name="order_id" value="<?= $order['order_id'] ?>">
                             <input class="btn btn-success btn-gradient-green" type="submit" value="Duyệt">
                         </form>
                     </td>
+
+                </tr>
+
+            <?php endforeach; ?>
+        </table>
+
+        <h1>Đơn hàng đã duyệt</h1>
+
+        <table class="table table-gradient-yellow">
+            <tr>
+                <th>Customer Name</th>
+                <th>Product Name</th>
+                <th>Product Img</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Payment method</th>
+            </tr>
+
+            <!-- list bill  -->
+            <?php foreach ($list_order_4 as $order) : ?>
+                <?php if ($order['payment_method'] == 1) {
+                    $order['payment_method'] = 'Thanh toán khi nhận hàng';
+                } else {
+                    $order['payment_method'] = 'Thanh toán bằng chuyển khoản';
+                }
+
+                if ($order['status'] == 0) {
+                    $order['status'] = 'Đang chờ duyệt';
+                } else  if ($order['status'] == 1) {
+                    $order['status'] = '<div style = "color: red"> Đơn hàng bị hủy </div>';
+                } else if ($order['status'] == 2) {
+                    $order['status'] = 'Đã chuyển qua đơn vị vận chuyển';
+                } else if ($order['status'] == 3) {
+                    $order['status'] = '<div style = "color: orange"> Đang chờ người mua xác nhận </div>';
+                }
+                ?>
+
+                <tr>
+                    <td><?= $order['customer_name'] ?></td>
+                    <td><?= $order['product_name'] ?></td>
+                    <td> <img src="<?= $order['product_img'] ?>" width=200px> </td>
+                    <td><?= $order['quantity'] ?></td>
+                    <td><?= $order['total_bill'] ?></td>
+                    <td style="color: blue;"><?= $order['status'] ?></td>
+                    <td><?= $order['payment_method'] ?></td>
                 </tr>
 
             <?php endforeach; ?>
@@ -80,4 +123,3 @@ $list_order = $data['list_order'];
 </section>
 
 <!-- <script src="Public/js/view.js"></script> -->
-

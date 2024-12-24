@@ -30,6 +30,8 @@ require_once "App/Controller/Admin/BillController.php";
 require_once "App/Controller/Admin/ProductController_admin.php";
 require_once "App/Controller/Admin/CustomerController.php";
 
+require_once "App/Controller/Shipper/BaseController_s.php";
+require_once "App/Controller/Shipper/ShipperController.php";
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
@@ -161,6 +163,10 @@ if (isset($_GET['action'])) {
             $customer = new CustomerController;
             $customer->update_customer();
             break;
+        case 'order_to_bill':
+            $customer = new CustomerController_U;
+            $customer->order_to_bill();
+            break;
         case 'bill':
             $bill = new BillController;
             $bill->order();
@@ -169,13 +175,25 @@ if (isset($_GET['action'])) {
             $bill = new BillController;
             $bill->delete_order_bill();
             break;
-        case 'order_to_bill':
+        case 'admin_duyet':
             $bill = new BillController;
-            $bill->order_to_bill();
+            $bill->status_duyet();
+            break;
+        case 'admin_huy':
+            $bill = new BillController;
+            $bill->status_huy();
             break;
         case 'search_order':
             $bill = new BillController;
             $bill->search_order();
+            break;
+        case 'shipper':
+            $ship = new ShipperController;
+            $ship->shipper();
+            break;
+        case 'check_ship':
+            $ship = new ShipperController;
+            $ship->check_ship();
             break;
         default:
             break;

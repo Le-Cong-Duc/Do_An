@@ -25,6 +25,8 @@ class SignInController
                     header("Location: index.php?action=admin");
                 } else if ($result['role'] == 0) {
                     header("Location: index.php?action=user");
+                } else if ($result['role'] == 3) {
+                    header("Location: index.php?action=shipper");
                 }
             } else {
                 header('location: /Do_an/index.php?action=sign_in');

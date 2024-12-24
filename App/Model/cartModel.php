@@ -15,11 +15,42 @@ class cartModel
         return $this->db->get_all($sql);
     }
 
-    // function get_all_bill()
-    // {
-    //     $sql = 'SELECT * FROM bill';
-    //     return $this->db->get_all($sql);
-    // }
+    function get_all_order_1()
+    {
+        $sql = 'SELECT * FROM order_bill WHERE status = 0 ';
+        return $this->db->get_all($sql);
+    }
+
+    function get_all_order_ship()
+    {
+        $sql = 'SELECT * FROM order_bill WHERE status IN(2,3) ORDER BY status ';
+        return $this->db->get_all($sql);
+    }
+
+    function get_all_order_4()
+    {
+        $sql = 'SELECT * FROM order_bill WHERE status BETWEEN 1 AND 3';
+        return $this->db->get_all($sql);
+    }
+
+    function update_status_duyet($order_id)
+    {
+        $sql = 'UPDATE order_bill SET status = 2 WHERE order_id =' . $order_id;
+        return $this->db->exec($sql);
+    }
+
+    function update_status_huy($order_id)
+    {
+        $sql = 'UPDATE order_bill SET status = 1 WHERE order_id =' . $order_id;
+        return $this->db->exec($sql);
+    }
+
+    function update_shipper($order_id)
+    {
+        $sql = 'UPDATE order_bill SET status = 3 WHERE order_id =' . $order_id;
+        return $this->db->exec($sql);
+    }
+
     function get_all_bill($limit)
     {
         $sql = 'SELECT * FROM bill LIMIT ' . $limit;

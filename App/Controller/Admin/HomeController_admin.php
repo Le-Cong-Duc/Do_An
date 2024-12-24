@@ -14,7 +14,7 @@ class HomeController_A extends BaseController_A
 
     function index()
     {
-        $this->data['list_bill'] = $this->cart->get_all_bill(10);
+        $this->data['list_bill'] = $this->cart->get_all_bill(100);
 
         $this->data['list_product'] = $this->product->get_all_product(0, 0);
         $this->data['list_customer'] = $this->customer->get_all_customer();
