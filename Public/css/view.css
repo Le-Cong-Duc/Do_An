@@ -44,14 +44,19 @@
 }
 
 #nav .navbar ul li a {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     padding: 10px 20px 0;
     text-decoration: none;
     color: #333;
     display: block;
 }
-
+#nav #sub-menu li a:hover {
+    color: #ffffff;
+    background-color: #0000008a;
+    border-radius: 5px;
+    transition: .5s;
+}
 #nav .navbar ul li a:hover {
     color: #6BA3BE;
     background-color: #fff;
@@ -67,7 +72,7 @@
 #nav .navbar ul li ul {
     position: absolute;
     width: 210px;
-    background-color: #ffffff77;
+    background-color: #3766e14d;
     list-style: none;
     display: none;
     border-radius: 5px;
@@ -162,7 +167,17 @@
         opacity: 0.9;
     }
 }
+#main{
+  margin-top: 20px;
+  display: flex;
+  align-content: center;
 
+}
+#main .totaltotal{
+    margin-top: 15px;
+    margin-left: 210px;
+   
+}
 /*-------------- Container----------------- */
 
 #container {
@@ -181,7 +196,7 @@
 #slider img {
     width: 100%;
     /* height: 200px; */
-    height: 500px;
+    height: 550px;
 }
 
 @media(max-width:1110px) {
@@ -203,7 +218,33 @@
         display: none;
     }
 }
-
+/* High-lightlight */
+.highlight {
+    background-color: #f89c23dc;
+    padding: 10px ; 
+    border-radius: 5px;
+    text-align: center; 
+    animation: backgroundColorChange 5s infinite; 
+    justify-content: center;
+}
+#product .highlight {
+     
+     margin-left:  560px ;
+     margin-right: 490px ;
+}
+@media (max-width: 1200px) {
+    #product .highlight {
+        margin-left:  100px ;
+        margin-right: 100px ;
+    }
+}
+@keyframes backgroundColorChange {
+    0% {color: red; }
+    25% { color: orange; }
+    50% { color: #2f26a5; }
+    75% { color: rgb(0, 0, 0); }
+    100% { color: rgb(226, 22, 182); }
+}
 /*---------------- introduce ------------ */
 
 #introduce {
@@ -416,7 +457,7 @@
     position: relative;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    margin: 15px 0;
+    margin: 15px 15px;
     margin-right: 4px;
     background-color: snow;
     overflow: hidden;
@@ -729,7 +770,8 @@
     padding: 100px;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin: 110px 0px;
+
 
 }
 

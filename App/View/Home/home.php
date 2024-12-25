@@ -30,11 +30,19 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
         <img src="Public/img/slide.jpg" class="img-fluid" alt="">
     </section>
 
+    <!-- <div id="introduce">
+        <h2>ĐẶC SẢN <div class="title"> ĐÀ NẴNG</div>
+        </h2>
+    </div> -->
     <div id="introduce">
         <h2>ĐẶC SẢN <div class="title"> ĐÀ NẴNG</div>
         </h2>
-    </div>
 
+        <p> Kết thúc chuyến đi Đà Nẵng của mình, bạn đang muốn tìm những món quà nho nhỏ về làm quà? Quả là khó để mang
+            về nhà những mì Quảng, bún mắm hay bánh xèo, nhưng hãy yên tâm vì thành phố biển xinh đẹp này vẫn còn rất
+            nhiều món đặc sản khô Đà Nẵng mang đầy đủ hương vị đặc trưng nơi đây.
+        </p>
+    </div>
 
     <section id="category">
 
@@ -57,7 +65,7 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
     <section id="product">
 
         <hr>
-        <h4 style="color: red;">Sản phẩm bán chạy </h4>
+        <h4 class="highlight" >Sản phẩm bán chạy </h4>
         <hr>
         <div style="background-color: yellow;" class="pro-container" id="most">
             <?= $html_most_product; ?>
@@ -76,7 +84,7 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
         <div class="phantrang">
             <a href="#1_1">1</a>
             <a href="#1_2">2</a>
-            <a style="color: blue;" href="index.php?action=product&category_id=1" style="background-color: black; color: aliceblue;">More >></a>
+            <a style="color: white;" href="index.php?action=product&category_id=1" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
         <hr>
@@ -88,7 +96,7 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
         <div class="phantrang">
             <a href="#2_1">1</a>
             <a href="#2_2">2</a>
-            <a style="color: blue;" href="index.php?action=product&category_id=2" style="background-color: black; color: aliceblue;">More >></a>
+            <a style="color: white;" href="index.php?action=product&category_id=2" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
         <hr>
@@ -100,7 +108,7 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
         <div class="phantrang">
             <a href="#3_1">1</a>
             <a href="#3_2">2</a>
-            <a style="color: blue;" href="index.php?action=product&category_id=3" style="background-color: black; color: aliceblue;">More >></a>
+            <a style="color: white;" href="index.php?action=product&category_id=3" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
         <hr>
@@ -112,20 +120,12 @@ $html_most_product_2 = $show_product->show_product($data['most_product_2']);
         <div class="phantrang">
             <a href="#4_1">1</a>
             <a href="#4_2">2</a>
-            <a style="color: blue;" href="index.php?action=product&category_id=4" style="background-color: black; color: aliceblue;">More >></a>
+            <a style="color: white;" href="index.php?action=product&category_id=4" style="background-color: black; color: aliceblue;">More >></a>
         </div>
 
     </section>
 
-    <div id="introduce">
-        <h2>ĐẶC SẢN <div class="title"> ĐÀ NẴNG</div>
-        </h2>
-
-        <p> Kết thúc chuyến đi Đà Nẵng của mình, bạn đang muốn tìm những món quà nho nhỏ về làm quà? Quả là khó để mang
-            về nhà những mì Quảng, bún mắm hay bánh xèo, nhưng hãy yên tâm vì thành phố biển xinh đẹp này vẫn còn rất
-            nhiều món đặc sản khô Đà Nẵng mang đầy đủ hương vị đặc trưng nơi đây.
-        </p>
-    </div>
+    
 
     <section class="intro-section">
         <h2 class="intro-title">

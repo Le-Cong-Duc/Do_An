@@ -23,8 +23,8 @@ foreach ($list_category as $category) {
     <nav class="navbar">
         <ul>
             <li> <a href="index.php">Trang Chủ  </a></li>
-            <li> <a href="#">Sản Phẩm </a>
-                <ul>
+            <li> <a href="#" id="main-menu" >Sản Phẩm</a>
+            <ul id="sub-menu"  style="display: none;">
                     <?=$html_list_category?>
                 </ul>
             </li>
@@ -45,3 +45,14 @@ foreach ($list_category as $category) {
 
     </nav>
 </section>
+<script>
+    document.getElementById("main-menu").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    const submenu = document.getElementById("sub-menu");
+    if (submenu.style.display === "none" || submenu.style.display === "") {
+        submenu.style.display = "block";
+    } else {
+        submenu.style.display = "none";
+    }
+});
+</script>

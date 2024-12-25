@@ -60,7 +60,7 @@ $html_most_product_2 = $show_product->show_product_u($data['most_product_2']);
     <section id="product">
 
         <hr>
-        <h4 style="color: red;">Sản phẩm bán chạy </h4>
+        <h4 class="highlight" >Sản phẩm bán chạy </h4>
         <hr>
         <div style="background-color: yellow;" class="pro-container" id="most">
             <?= $html_most_product; ?>
