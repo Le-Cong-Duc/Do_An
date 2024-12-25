@@ -101,7 +101,7 @@ $customer = $data['list_customer'];
                         <td> <img src="<?= $order['product_img'] ?>" width=150px> </td>
                         <td><?= $order['product_name'] ?> </td>
                         <td><?= $order['quantity'] ?></td>
-                        <td><?= $order['total_bill'] ?></td>
+                        <td><?= number_format( $order['total_bill'] )?>,000 VNĐ</td>
                         <td style="color: blue; font-weight: 600;"><?= $order['status'] ?></td>
                     </tr>
 
@@ -126,7 +126,7 @@ $customer = $data['list_customer'];
                         <td> <img src="<?= $bill['product_img'] ?>" width=150px> </td>
                         <td><?= $bill['product_name'] ?> </td>
                         <td><?= $bill['quantity'] ?></td>
-                        <td><?= $bill['total'] ?></td>
+                        <td><?= number_format($bill['total']) ?>,000 VNĐ</td>
                     </tr>
 
                 <?php endforeach; ?>

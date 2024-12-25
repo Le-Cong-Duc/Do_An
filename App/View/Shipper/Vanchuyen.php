@@ -62,5 +62,3 @@ $list_order = $data['list_order'];
 
     </div>
 </section>
-
-<?php include('footer_s.php') ?>

@@ -65,7 +65,7 @@ $total_bill = 0;
             <a href="index?action=user" class="btn btn-primary">Tiếp tục mua sắm</a>
             <a href="index?action=buy_all_cart_u" class="btn btn-success">Mua tất cả</a>
 
-            <div class="totaltotal" style="color: blue; font-weight: bolder;">Tổng tiền: <?= number_format($total_bill) ?>.000 VNĐ</div>
+            <div class="totaltotal" style="color: blue; font-weight: bolder;">Tổng tiền: <?= number_format($total_bill) ?>,000 VNĐ</div>
         </div>
     </div>
 </section>
